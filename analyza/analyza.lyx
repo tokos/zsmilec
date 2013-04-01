@@ -1,0 +1,340 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language czech
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language polish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Webové stránky ZŠ Mileč - analýza
+\end_layout
+
+\begin_layout Author
+Bc.
+ Tomáš Kohout
+\end_layout
+
+\begin_layout Date
+24.03.2013
+\end_layout
+
+\begin_layout Part
+Úvod
+\end_layout
+
+\begin_layout Paragraph
+ZŠ Mileč již používá jistou formu prezentace na webu (http://www.zsmilec.ic.cz/).
+ Vzhledem k neudržovanosti a neaktuálnosti těchto webových stránek se škola
+ rozhodla pro nové komplexní řešení.
+ Stávající řešení nebude již dále používáno ani dál upravováno.
+ Nová aplikace bude mít vlastní nový layout.
+ Vzhledem k uvažované použité technologii (Ruby on Rails) bude potřeba změnit
+ i webhosting (zrušit stávající a uzavřít novou smlouvu - dále v části Webhostin
+g).
+ 
+\end_layout
+
+\begin_layout Paragraph
+Webové stránky by měly být vizitkou a výkladní skříní školy.
+ Proto se škola rozhodla pro změnu.
+ Informace musí být pravidelně udržovány a hlavně aktualizovány.
+ Pokud bude web obsahovat kvalitní informace, začne být znovu hojně využíván
+ žáky i rodiči.
+\end_layout
+
+\begin_layout Part
+Požadovaný rámec funkčností
+\end_layout
+
+\begin_layout Section
+Aktuálně - co se děje
+\end_layout
+
+\begin_layout Paragraph
+Samozřejmostí webu bude upozorňovací sekce na aktuálně přidané dokumenty.
+ Na nové úpravy informací na webu.
+ Stačil by tenký upozorňovací pruh buď v horní části stránky nebo vespod.
+\end_layout
+
+\begin_layout Section
+Historie školy
+\end_layout
+
+\begin_layout Paragraph
+Důležitou součástí webu by měly být i informace o historii školy.
+ ZŠ Mileč je v tomto škola s dlouholetou tradicí a přístupem.
+ 
+\end_layout
+
+\begin_layout Section
+Kontakty
+\end_layout
+
+\begin_layout Paragraph
+Všechny důležité kontakty a adresy musí být dostupné na jedné stránce.
+\end_layout
+
+\begin_layout Section
+Personální složení - zaměstnanci
+\end_layout
+
+\begin_layout Paragraph
+Aktuální údaje o zaměstnancích školy.
+\end_layout
+
+\begin_layout Section
+Reference
+\end_layout
+
+\begin_layout Paragraph
+Reference firem, jejichž řešení škola používá popřípadě s nim spolupracuje.
+ Volitelná sekce.
+ Ještě bude upřesněno.
+\end_layout
+
+\begin_layout Section
+Žákovská rada
+\end_layout
+
+\begin_layout Paragraph
+Složení, úkoly a povinnosti žákovské rady.
+ Výsledky činnosti.
+\end_layout
+
+\begin_layout Section
+Harmonogram aktuálního školního roku
+\end_layout
+
+\begin_layout Paragraph
+Informace a důležitá data probíhajícího školního roku.
+ Data rodičovských schůzek, školních výletů.
+ Kdy se uzavírají známky, atd.
+\end_layout
+
+\begin_layout Section
+Rozvrh hodin
+\end_layout
+
+\begin_layout Paragraph
+Rozvrh hodin pro aktuální školní rok.
+\end_layout
+
+\begin_layout Section
+Rodiče
+\end_layout
+
+\begin_layout Paragraph
+Obecné informace pro rodiče a možnost přístupu do zabezpečené sekce (po
+ přihlášení).
+ V zabezpečené sekci by rodiče našli konkrétní informace o svých dětech.
+ Jejich hodnocení, popřípadě elektronicky odevzdávané práce, atd.
+ V této sekci by mohli přímo k danému tématu kontaktovat učitele, kterému
+ by přišel email s hlavičkou kupříkladu: Petr Novák, dějepis, písemka 26.1.2000:
+ a text zpětné vazby od rodiče.
+\end_layout
+
+\begin_layout Section
+Žáci
+\end_layout
+
+\begin_layout Paragraph
+Obecné informace pro žáky.
+ Možnost stažení některých dokumentů a materiálů.
+ Po přihlášení možný vstup do zabezpečené sekce.
+ V této sekci by bylo možno například odevzdávat domácí úkoly v elektronické
+ podobě.
+\end_layout
+
+\begin_layout Section
+Fotogalerie
+\end_layout
+
+\begin_layout Paragraph
+Jistá forma uchovávání fografií a jejich prezentace.
+ Bude záviset na vybraném technologickém řešení.
+ Pozor na porušování ochrany osobních údajů.
+\end_layout
+
+\begin_layout Part
+Návrh řešení
+\end_layout
+
+\begin_layout Section
+Technologie
+\end_layout
+
+\begin_layout Subsection
+Ruby on Rails
+\end_layout
+
+\begin_layout Paragraph
+Jako základní technologický kámen bude použit skriptovací objektový jazyk
+ Ruby (verze 1.9) a framework pro vývoj webovách aplikací Ruby on Rails.
+ Tento framework důsledně používá architekturu MVC - Model, View, Controller.
+ Toto řešení je plně bezplatné (dokonce Open Source) a komunita Ruby poskytuje
+ značnou podporu i s výhledem do budoucna.
+\end_layout
+
+\begin_layout Subsection
+MySQL
+\end_layout
+
+\begin_layout Paragraph
+Vzhledem k nutnosti použít webhosting (nedostatek vlastních hardwarových
+ kapacit pro provozování webu), musíme vycházet z nabízených možností webhosting
+ových firem.
+ Databáze MySQL bude tedy vynucenou volbou.
+ Pro takovouto formu aplikace bude řešení plně dostačující (několik tabulek,
+ relativné málo uložených dat).
+ Použijeme tedy toto bezplatné řešení.
+\end_layout
+
+\begin_layout Subsection
+XHTML
+\end_layout
+
+\begin_layout Paragraph
+V používaných layoutech bude kladen důrau na čistotu kódu (použití standardu
+ XHTML je dnes skoro samozřejmostí v oblasti).
+\end_layout
+
+\begin_layout Subsection
+CSS
+\end_layout
+
+\begin_layout Paragraph
+Kaskádové styly souvisí se standardem XHTML.
+ Formátování textu a webových prvků je odděleno od obsahu.
+ Použito bude standardní CSS 2.0.
+\end_layout
+
+\begin_layout Section
+Architektura projektu
+\end_layout
+
+\begin_layout Paragraph
+Bude použito striktní řešení MVC - Model, View, Controller.
+ Kdy jsou zvlášť odděleny vizuální podoby stránek (views) od generovaného
+ obsahu, který se do nich dostavá pomocí modelů, které plní předpřipravené
+ datové struktury.
+ Controllery neboli řadiče směrují požadavky mezi jednotlivými pohledy (views)
+ a spojují je s modely.
+ Z této architektury vyplývají výhody do budoucna.
+ Například snadno spravovatelený kód, který bude čitelný pro spoustu lidí.
+ (Jazyk Ruby není problémem - hodně podobný dnešním objektovým jazykům jako
+ je Java nebo C#).
+ Ruby řešení má oproti Javě další výhody, vzhledem k povaze jazyka, který
+ je skriptovací.
+ Odpadá nutnost kompilace.
+ Zdrojový kód se rovnou interpretuje na serveru.
+ Web by měl být v závislosti na využívaném webhostingu rychlý se snadno
+ měnitelnou strukturou a obsahem.
+\end_layout
+
+\begin_layout Section
+Struktura webu
+\end_layout
+
+\begin_layout Paragraph
+TODO
+\end_layout
+
+\begin_layout Section
+Datový model
+\end_layout
+
+\begin_layout Paragraph
+TODO
+\end_layout
+
+\begin_layout Part
+Webhosting
+\end_layout
+
+\begin_layout Paragraph
+Škola si sama nemůže dovolit provozovat web na vlastním hardwaru (ostatně
+ jako většina institucí).
+ Investice by nebyla ani tak náročná jednorázově (počáteční náklady na zakoupení
+ serveru), ale spíše později udržovací náklady by se mohly stát nemalou
+ výdajovou složkou (nutnost administrace a údržby serveru).
+ Proto je pro školu daleko výhodnější využít nabízené webhostingové služby
+ jako celek.
+ Toto řešení se bude pohybovat v nákladech kolem 600Kč/měsíčně bez starostí
+ a bez dalších nákladů.
+\end_layout
+
+\begin_layout Section
+Ruby on Rails hosting
+\end_layout
+
+\begin_layout Paragraph
+Vzhledem k použité technologii Ruby on Rails je nutno přejít na webhosting
+ podporující tuto technologii.
+ V současné době je k dispozici více firem poskytujících webhosting pro
+ Ruby.
+ Doporučuji využít služby http://www.railshosting.cz/.
+ Ceny se pohybují od 200/mesíc do 3500/měsíc.
+ Doporučuji střední nastavení webhostingu (cca 600Kč/měsíc).
+\end_layout
+
+\begin_layout Part
+Závěr
+\end_layout
+
+\end_body
+\end_document
