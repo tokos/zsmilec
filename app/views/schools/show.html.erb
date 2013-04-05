@@ -1,5 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-
+<table>
+  <tr>
+  	<% School.column_names.each do |column_name| %>
+  	<th><%=h column_name %></th>
+  	<% end %>
+  </tr>
+  <tr>
+  	<% School.column_names.each do |column_name| %>
+  	<td><%=h @school[column_name] %></td>
+  	<% end %>
+  </tr>
+</table>	
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>

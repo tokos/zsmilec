@@ -1,4 +1,23 @@
 <%= form_for(@school) do |f| %>
+
+<table>
+  <tr>
+  	<% School.column_names.each do |column_name| %>
+  	  <% unless column_name == "ID" %>
+  	  <th><%=h column_name %></th>
+  	  <% end %>
+  	<% end %>
+  </tr>
+  <tr>
+  	<td><%= f.text_field :NAME %></td>
+  	<td><%= f.text_field :ADDRESS %></td>
+  	<td><%= f.text_field :PHONE %></td>
+  	<td><%= f.text_field :EMAIL %></td>
+  	<td><%= f.text_field :HEADMASTER %></td>
+  	<td><%= f.text_field :PHONE_MESS %></td>
+  </tr>
+</table>
+
   <% if @school.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@school.errors.count, "error") %> prohibited this school from being saved:</h2>
@@ -12,6 +31,6 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Uložit" %>
   </div>
 <% end %>
