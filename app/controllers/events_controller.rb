@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+  
+  #TODO login before filter
+  #---------------------------------------------------------------------
+  
   # GET /events
   # GET /events.json
   def index
