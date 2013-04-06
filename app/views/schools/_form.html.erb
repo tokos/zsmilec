@@ -2,20 +2,29 @@
 
 <table>
   <tr>
-  	<% School.column_names.each do |column_name| %>
-  	  <% unless column_name == "ID" %>
-  	  <th><%=h column_name %></th>
-  	  <% end %>
-  	<% end %>
+  	<th>Název školy</th>
+  	<td><%= f.text_field :NAME %></td>
   </tr>
   <tr>
-  	<td><%= f.text_field :NAME %></td>
+  	<th>Adresa</th>
   	<td><%= f.text_field :ADDRESS %></td>
-  	<td><%= f.text_field :PHONE %></td>
-  	<td><%= f.text_field :EMAIL %></td>
-  	<td><%= f.text_field :HEADMASTER %></td>
-  	<td><%= f.text_field :PHONE_MESS %></td>
   </tr>
+  <tr> 	
+  	<th>Telefon</th>
+  	<td><%= f.text_field :PHONE %></td>
+  </tr>
+  <tr>
+  	<th>Email</th>
+  	<td><%= f.text_field :EMAIL %></td>
+  </tr>
+  <tr>
+  	<th>Ředitel</th>
+  	<td><%= f.text_field :HEADMASTER %></td>
+  </tr>
+  <tr>
+  	<th>Telefon do jídelny</th>
+  	<td><%= f.text_field :PHONE_MESS %></td>
+  </tr>  
 </table>
 
   <% if @school.errors.any? %>

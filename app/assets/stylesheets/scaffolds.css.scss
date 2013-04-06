@@ -19,13 +19,18 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #000099;
+  border: 1px solid black;
+  padding-left: 3px; padding-right: 3px;
   &:visited {
-    color: #666;
+    color: #000099;
+    border: 1px solid black;
+    padding-left: 3px; padding-right: 3px;
   }
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: yellow;
+    background-color: black;    
+    padding-left: 3px; padding-right: 3px;
   }
 }
 

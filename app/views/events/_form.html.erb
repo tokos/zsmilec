@@ -2,14 +2,19 @@
 
   <table>
     <tr>
-  	  <td>Datum zveřejnění/konání</td>
-  	  <td>Čas zveřejnění/konání</td>
-  	  <td>Obsah</td>
-  	  <td>Typ události</td>
+  	  <th>Datum zveřejnění/konání</th>
+  	  <th>Čas zveřejnění/konání</th>
+  	  <th>Obsah</th>
+  	  <th>Typ události</th>
     </tr>
     <tr>
-  	  <td><%= f.text_field :EVENT_DATE, :value => @event.EVENT_DATE.strftime("%d.%m.%Y") %></td>
-  	  <td><%= f.text_field :EVENT_TIME, :value => @event.EVENT_TIME.strftime("%H:%M") %></td>
+      <% if @event.EVENT_DATE == nil %>	
+        <td><%= f.text_field :EVENT_DATE %></td>
+        <td><%= f.text_field :EVENT_TIME %></td>
+      <% else %>  
+  	    <td><%= f.text_field :EVENT_DATE, :value => @event.EVENT_DATE.strftime("%d.%m.%Y") %></td>
+  	    <td><%= f.text_field :EVENT_TIME, :value => @event.EVENT_TIME.strftime("%H:%M") %></td>
+  	  <% end %>
   	  <td><%= f.text_field :TEXT %></td>
   	  <td><%= f.select(:TYPE, options_for_select({"Aktualita" => "ACT", "Akce harmonogramu" =>"EVT"}, @event.TYPE)) %></td>
     </tr>

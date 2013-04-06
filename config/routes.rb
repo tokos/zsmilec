@@ -3,6 +3,8 @@ RailsinstallerDemo::Application.routes.draw do
 
 
   resources :schools
+  
+  resources :admin
 
 
   # The priority is based upon order of creation:
