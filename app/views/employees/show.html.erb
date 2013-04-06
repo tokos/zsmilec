@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+  	<% Employee.column_names.each do |column_name| %>
+  	<th><%=h column_name %></th>
+  	<% end %>
+  </tr>
+  <tr>
+  <% Employee.column_names.each do |column_name| %>
+  	<% if column_name == "ENTRY_DATE" %>
+  	  <td><%=h @employee[column_name].strftime("%d.%m.%Y") %></td>  	
+  	<% else %>
+  	  <td><%=h @employee[column_name] %></td>  
+  	<% end %>
+  <% end %>  	
+  </tr>
+</table>
+
+<%= link_to 'Upravit', edit_employee_path(@employee) %> |
+<%= link_to 'Zpět', employees_path %>

@@ -1,0 +1,25 @@
+<h1 class="table">Zaměstnanci školy</h1>
+
+<table>
+  <tr>
+  	<th>Jméno</th>
+  	<th>Příjmení</th>
+  	<th>Pozice</th>
+  </tr>	
+<% @employees.each do |employee| %>
+  <tr>
+  	<td><%=h employee.FIRST_NAME %></td>
+  	<td><%=h employee.LAST_NAME %></td>
+  	<td><%=h employee.POSITION %></td>
+    <td><%= link_to 'Ukázat', employee %></td>
+    <td><%= link_to 'Upravit', edit_employee_path(employee) %></td>
+    <td><%= link_to 'Smazat', employee, method: :delete, data: { confirm: 'Jste si jisti?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Přidat zaměstnance', new_employee_path %>
+<br />
+<a class="button" href="admin"><image src="assets/go-back-icon.png" height="26" width="26" title="Zpět do hlavního menu" /></a>
