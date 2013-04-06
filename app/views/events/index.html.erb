@@ -1,0 +1,30 @@
+<h1>Aktuality, akce harmonogramu</h1>
+
+<table>
+  <tr>
+    <th>Datum</th>
+    <th>Čas</th>
+    <th>Obsah</th>
+    <th>Typ</th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+  	<td><%=h event.EVENT_DATE.strftime("%d.%m.%Y") %></td>
+  	<td><%=h event.EVENT_TIME.strftime("%H:%M") %></td>
+  	<td><%=h event.TEXT %></td>
+  	<% if event.TYPE == "ACT" %>
+  	  <td>Aktualita</td>
+  	<% else %>
+  	  <td>Akce harmonogramu</td>
+  	<% end %>    
+    <td><%= link_to 'Ukázat', event %></td>
+    <td><%= link_to 'Upravit', edit_event_path(event) %></td>
+    <td><%= link_to 'Smazat', event, method: :delete, data: { confirm: 'Jste si jisti?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nový záznam', new_event_path %>

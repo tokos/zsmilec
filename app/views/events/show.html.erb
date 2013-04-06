@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+  	<% Event.column_names.each do |column_name| %>
+  	<th><%=h column_name %></th>
+  	<% end %>
+  </tr>
+  <tr>
+  <% Event.column_names.each do |column_name| %>
+  	<% if column_name == "EVENT_DATE" %>
+  	  <td><%=h @event[column_name].strftime("%d.%m.%Y") %></td>
+  	<% elsif column_name == "EVENT_TIME" %>
+  	  <td><%=h @event[column_name].strftime("%H:%M") %></td>
+  	<% else %>
+  	  <td><%=h @event[column_name] %></td>  
+  	<% end %>
+  <% end %>  	
+  </tr>
+</table>
+
+<%= link_to 'Upravit', edit_event_path(@event) %> |
+<%= link_to 'Zpět', events_path %>
