@@ -1,5 +1,7 @@
 RailsinstallerDemo::Application.routes.draw do
 
+  resources :days
+
   resources :councils
 
   resources :timetables

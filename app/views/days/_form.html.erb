@@ -1,0 +1,33 @@
+<%= form_for(@day) do |f| %>
+
+  <table>
+    <tr>
+  	  <th>Název</th>
+  	  <td><%= f.text_field :NAME %></td>
+  	</tr>
+  	<tr>
+  	  <th>Pořadí v týdnu</th>
+  	  <td><%= f.text_field :POSITION %></td>
+  	</tr>  	
+  	<tr>
+  	  <th>Patří do rozvrhu</th>
+  	  <td><%= f.select :TIMETABLE_ID, options_for_select(@timetables_map, @day.TIMETABLE_ID) %></td>
+  	</tr>
+  </table>
+
+  <% if @day.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@day.errors.count, "error") %> prohibited this day from being saved:</h2>
+
+      <ul>
+      <% @day.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Uložit" %>
+  </div>
+<% end %>

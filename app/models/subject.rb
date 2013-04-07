@@ -1,4 +1,7 @@
 class Subject < ActiveRecord::Base
+  
+  set_primary_key "ID"
+  
   belongs_to :day
   belongs_to :employee
   has_many :tasks
