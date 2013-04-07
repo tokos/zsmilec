@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+  	<% Hour.column_names.each do |column_name| %>
+  	<th><%=h column_name %></th>
+  	<% end %>
+  </tr>
+  <tr>
+  <% Hour.column_names.each do |column_name| %>
+  	<td><%=h @hour[column_name] %></td>
+  <% end %>  	
+  </tr>
+</table>
+
+<%= link_to 'Ukázat', edit_hour_path(@hour) %> |
+<%= link_to 'Zpět', hours_path %>

@@ -1,0 +1,32 @@
+<h1 class="table">Vyučovací hodiny</h1>
+
+<!-- TODO rozkliknout podle rozvrhu a dne -->
+
+<table>
+  <tr>
+  	<th>Pořadí</th>
+  	<th>Den</th>
+    <th>Hodina</th>
+    <th>Předmět</th>
+    <th>Poznámka</th>    
+  </tr>
+
+<% @hours.each do |hour| %>
+  <tr>
+  	<td><%=h hour.POSITION %>.</td>
+  	<td><%=h Day.find(hour.DAY_ID).NAME %></td>
+  	<td><%=h hour.HOUR %></td>
+  	<td><%=h hour.SUBJECT_ID %></td>
+  	<td><%=h hour.NOTE %></td>
+    <td><%= link_to 'Ukázat', hour %></td>
+    <td><%= link_to 'Upravit', edit_hour_path(hour) %></td>
+    <td><%= link_to 'Smazat', hour, method: :delete, data: { confirm: 'Jste si jistí?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nová vyučovací hodina', new_hour_path %>
+<br />
+<a class="button" href="admin"><image src="assets/go-back-icon.png" height="26" width="26" title="Zpět do hlavního menu" /></a>

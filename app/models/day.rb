@@ -1,6 +1,6 @@
 class Day < ActiveRecord::Base
   
-  set_primary_key "ID"
+  self.set_primary_key "ID"
   
   belongs_to :timetable
   has_many :hours

@@ -4,4 +4,6 @@ class Hour < ActiveRecord::Base
   
   belongs_to :day
   has_many :subjects
+  
+  attr_accessible :DAY_ID, :HOUR, :NOTE, :POSITION, :SUBJECT_ID
 end

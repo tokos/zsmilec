@@ -1,0 +1,41 @@
+<%= form_for(@hour) do |f| %>
+
+  <table>
+    <tr>
+  	  <th>Hodina</th>
+  	  <td><%= f.text_field :HOUR %></td>
+  	</tr>
+  	<tr>
+  	  <th>Poznámka</th>
+  	  <td><%= f.text_field :NOTE %></td>
+  	</tr>
+  	<tr>
+  	  <th>Pořadí</th>
+  	  <td><%= f.text_field :POSITION %></td>
+  	</tr>
+  	<tr>
+  	  <th>Předmět</th>
+  	  <td><%= f.text_field :SUBJECT_ID %></td>
+  	</tr>
+  	<tr>
+  	  <th>Den</th>
+  	  <td><%= f.select :DAY_ID, options_for_select(@days_map, @hour.DAY_ID) %></td>
+  	</tr>  	      	
+  </table>
+
+  <% if @hour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hour.errors.count, "error") %> prohibited this hour from being saved:</h2>
+
+      <ul>
+      <% @hour.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Uložit" %>
+  </div>
+<% end %>

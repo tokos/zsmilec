@@ -2,7 +2,7 @@ class DaysController < ApplicationController
   # GET /days
   # GET /days.json
   def index
-    @days = Day.all
+    @days = Day.order("POSITION")
 
     @timetables = Timetable.all
     @timetables_map = {}

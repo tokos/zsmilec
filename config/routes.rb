@@ -1,5 +1,7 @@
 RailsinstallerDemo::Application.routes.draw do
 
+  resources :hours
+
   resources :days
 
   resources :councils
