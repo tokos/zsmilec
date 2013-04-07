@@ -1,9 +1,10 @@
 RailsinstallerDemo::Application.routes.draw do
+
+  resources :timetables
+
   resources :employees
 
-
   resources :events
-
 
   resources :schools
   

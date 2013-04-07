@@ -1,0 +1,24 @@
+<h1>Rozvrh hodin</h1>
+
+<table>
+  <tr>
+    <th>Školní rok</th>
+    <th>Název</th>    
+  </tr>
+
+<% @timetables.each do |timetable| %>
+  <tr>
+  	<td><%=h timetable.YEAR %></td>
+  	<td><%=h timetable.NAME %></td>
+    <td><%= link_to 'Ukázat', timetable %></td>
+    <td><%= link_to 'Upravit', edit_timetable_path(timetable) %></td>
+    <td><%= link_to 'Smazat', timetable, method: :delete, data: { confirm: 'Jste si jisti?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nový rozvrh', new_timetable_path %>
+<br />
+<a class="button" href="admin"><image src="assets/go-back-icon.png" height="26" width="26" title="Zpět do hlavního menu" /></a>

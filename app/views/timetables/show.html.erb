@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+  	<% Timetable.column_names.each do |column_name| %>
+  	<th><%=h column_name %></th>
+  	<% end %>
+  </tr>
+  <tr>
+  	<% Timetable.column_names.each do |column_name| %>
+  	<td><%=h @timetable[column_name] %></td>
+  	<% end %>
+  </tr>
+</table>
+
+<%= link_to 'Upravit', edit_timetable_path(@timetable) %> |
+<%= link_to 'Zpět', timetables_path %>
