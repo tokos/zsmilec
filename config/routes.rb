@@ -1,5 +1,7 @@
 RailsinstallerDemo::Application.routes.draw do
 
+  resources :councils
+
   resources :timetables
 
   resources :employees

@@ -1,0 +1,26 @@
+<h1>Žákovská rada</h1>
+
+<table>
+  <tr>
+    <th>Název</th>
+    <th>Datum vzniku</th>
+    <th>Platnost do</th>
+  </tr>
+
+<% @councils.each do |council| %>
+  <tr>
+  	<td><%=h council.NAME %></td>
+  	<td><%=h council.START_DATE.strftime("%d.%m.%Y") %></td>
+  	<td><%=h council.END_DATE.strftime("%d.%m.%Y") %></td>
+    <td><%= link_to 'Ukázat', council %></td>
+    <td><%= link_to 'Upravit', edit_council_path(council) %></td>
+    <td><%= link_to 'Smazat', council, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nová žákovská rada', new_council_path %>
+<br />
+<a class="button" href="admin"><image src="assets/go-back-icon.png" height="26" width="26" title="Zpět do hlavního menu" /></a>

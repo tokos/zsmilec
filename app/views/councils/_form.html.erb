@@ -1,0 +1,49 @@
+<%= form_for(@council) do |f| %>
+
+  <table>
+    <tr>
+  	  <th>Název</th>
+  	  <td><%= f.text_field :NAME %></td>
+  	</tr>
+  	<tr>
+  	  <th>Datum vzniku</th>
+  	  <% if @council.START_DATE == nil %>
+  	  	<td><%= f.text_field :START_DATE %></td>
+  	  <% else %>
+  	  	<td><%= f.text_field :START_DATE, :value => @council.START_DATE.strftime("%d.%m.%Y") %></td>
+  	  <% end %>
+  	</tr>
+  	<tr>
+  	  <th>Platnost do</th>
+  	  <% if @council.END_DATE == nil %>
+  	  	<td><%= f.text_field :END_DATE %></td>
+  	  <% else %>
+  	    <td><%= f.text_field :END_DATE, :value => @council.END_DATE.strftime("%d.%m.%Y") %></td>
+  	  <% end %> 	
+  	</tr>
+  	<tr>
+  	  <th>Úkoly</th>
+  	  <td><%= f.text_field :TASKS %></td>
+  	</tr>
+  	<tr>
+  	  <th>Výsledky</th>
+  	  <td><%= f.text_field :RESULTS %></td>
+  	</tr>  	   
+  </table>
+
+  <% if @council.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@council.errors.count, "error") %> prohibited this council from being saved:</h2>
+
+      <ul>
+      <% @council.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Uložit" %>
+  </div>
+<% end %>

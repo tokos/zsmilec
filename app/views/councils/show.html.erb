@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+  	<% Council.column_names.each do |column_name| %>
+  	<th><%=h column_name %></th>
+  	<% end %>
+  </tr>
+  <tr>
+  <% Council.column_names.each do |column_name| %>
+  	<% if column_name == "START_DATE" or column_name == "END_DATE" %>
+  	  <td><%=h @council[column_name].strftime("%d.%m.%Y") %></td>  	
+  	<% else %>
+  	  <td><%=h @council[column_name] %></td>  
+  	<% end %>
+  <% end %>  	
+  </tr>
+</table>
+
+<%= link_to 'Upravit', edit_council_path(@council) %> |
+<%= link_to 'Zpět', councils_path %>
