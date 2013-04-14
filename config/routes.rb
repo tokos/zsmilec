@@ -1,6 +1,13 @@
 RailsinstallerDemo::Application.routes.draw do
 
+  # **************
+  # ADMIN section
+  # **************
+
   resources :hours
+  
+  match 'hours/select_timetable' => 'hours#select_timetable'
+  match 'hours/select_day' => 'hours#select_day'
 
   resources :days
   
@@ -17,6 +24,8 @@ RailsinstallerDemo::Application.routes.draw do
   resources :schools
   
   resources :admin
+  
+  # **************************************************************
 
 
   # The priority is based upon order of creation:

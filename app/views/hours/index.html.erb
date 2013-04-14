@@ -1,6 +1,24 @@
 <h1 class="table">Vyučovací hodiny</h1>
 
-<!-- TODO rozkliknout podle rozvrhu a dne -->
+<%= form_tag(:controller => "hours", :action => "select_timetable", :method => "post") do %>
+  <table>
+  	<tr>
+  	  <th>Zobraz jen hodiny, náležející rozvrhu: </th>
+  	  <td><%= select_tag('timetable', options_from_collection_for_select(Timetable.all, "ID", "NAME", params[:t].to_i), :onchange => 'this.form.submit()', :prompt => 'Všechny') %></td>	
+    </tr>
+  </table>	
+<% end %>
+
+<%= form_tag(:controller => "hours", :action => "select_day", :method => "post") do %>
+  <table>
+  	<tr>
+  	  <th>Zobraz jen hodiny, dne: </th>
+  	  <td><%= select_tag('day', options_from_collection_for_select(Day.where(:TIMETABLE_ID => params[:t].to_i), "ID", "NAME", params[:d].to_i), :onchange => 'this.form.submit()', :prompt => 'Všechny') %></td>	
+    </tr>
+  </table>	
+<% end %>
+
+<hr />
 
 <table>
   <tr>
