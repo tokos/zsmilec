@@ -1,14 +1,33 @@
 class DaysController < ApplicationController
+  
+  # POST /days/select_timetable  
+  def select_timetable
+    if params[:timetable] == nil or params[:timetable] == ""
+      redirect_to :action => "index"
+    else    
+      t = Timetable.find(params[:timetable])
+      redirect_to :action => 'index', :t => t.ID
+    end    
+  end
+  
   # GET /days
   # GET /days.json
   def index
-    @days = Day.order("POSITION")
 
-    @timetables = Timetable.all
-    @timetables_map = {}
-    @timetables.each do |timetable|
-      @timetables_map[timetable.ID] = timetable.NAME
+    if params[:t] != nil
+      @days = Day.order("POSITION").where(:TIMETABLE_ID => params[:t].to_i)
+      @timetable = Timetable.find(params[:t])
+      @timetables_map = {}
+      @timetables_map[@timetable.ID] = @timetable.NAME
+    else
+      @days = Day.order("POSITION")
+      @timetables = Timetable.all
+      @timetables_map = {}
+      @timetables.each do |timetable|
+        @timetables_map[timetable.ID] = timetable.NAME
+      end
     end
+
 
     respond_to do |format|
       format.html # index.html.erb

@@ -3,6 +3,8 @@ RailsinstallerDemo::Application.routes.draw do
   resources :hours
 
   resources :days
+  
+  match 'days/select_timetable' => 'days#select_timetable'
 
   resources :councils
 

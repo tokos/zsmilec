@@ -1,5 +1,16 @@
 <h1 class="table">Vyučovací dny</h1>
 
+<%= form_tag(:controller => "days", :action => "select_timetable", :method => "post") do %>
+  <table>
+  	<tr>
+  	  <th>Zobraz jen dny, náležející rozvrhu: </th>
+  	  <td><%= select_tag('timetable', options_from_collection_for_select(Timetable.all, "ID", "NAME", params[:t].to_i), :onchange => 'this.form.submit()', :prompt => 'Všechny') %></td>	
+    </tr>
+  </table>	
+<% end %>	
+
+<hr />
+
 <table>
   <tr>
     <th>Název</th>
