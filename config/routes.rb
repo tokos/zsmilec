@@ -6,8 +6,7 @@ RailsinstallerDemo::Application.routes.draw do
 
   resources :hours
   
-  match 'hours/select_timetable' => 'hours#select_timetable'
-  match 'hours/select_day' => 'hours#select_day'
+  match 'hours/select_timetable' => 'hours#select_timetable'  
 
   resources :days
   

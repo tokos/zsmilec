@@ -2,34 +2,25 @@ class HoursController < ApplicationController
   
   #POST /hours/select_timetable
   def select_timetable
-    if params[:timetable] == nil or params[:timetable] == ""
-      redirect_to :action => "index"
-    else    
-      t = Timetable.find(params[:timetable])
-      redirect_to :action => 'index', :t => t.ID
-    end
-  end
-  
-  #POST /hours/select_day
-  def select_day
-    if params[:day] == nil or params[:day] == ""
-      redirect_to :action => "index"
-    else    
-      d = Day.find(params[:day])
-      redirect_to :action => 'index', :d => d.ID
-    end
-  end
+    redirect_to :action => "index", :t => params[:timetable], :d => params[:day]
+  end  
   
   # GET /hours
   # GET /hours.json
   def index
     
-    #TODO day
-    
-    if params[:t] != nil
-      @hours = Hour.joins(:day).where("days.TIMETABLE_ID" => params[:t].to_i)
+    if params[:t] != nil && params[:t] != ""
+      if params[:d] != nil && params[:d] != ""
+        @hours = Hour.joins(:day).where("days.TIMETABLE_ID" => params[:t].to_i, :DAY_ID => params[:d].to_i)
+      else
+        @hours = Hour.joins(:day).where("days.TIMETABLE_ID" => params[:t].to_i)  
+      end
     else
-      @hours = Hour.order("POSITION")
+      if params[:d] != nil && params[:d] != ""
+        @hours = Hour.joins(:day).where(:DAY_ID => params[:d].to_i)
+      else
+        @hours = Hour.order("POSITION")
+      end
     end
     
     @days = Day.all
