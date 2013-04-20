@@ -1,5 +1,8 @@
 RailsinstallerDemo::Application.routes.draw do
 
+  resources :subjects
+
+
   # **************
   # ADMIN section
   # **************

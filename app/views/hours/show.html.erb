@@ -8,10 +8,14 @@
   </tr>
   <tr>
   <% Hour.column_names.each do |column_name| %>
-  	<td><%=h @hour[column_name] %></td>
+    <% if column_name == 'SUBJECT_ID' and @hour[column_name] != nil %>
+      <td><%=h Subject.find(@hour[column_name]).SHORT_NAME %></td>
+    <% else %>
+      <td><%=h @hour[column_name] %></td>
+    <% end %>
   <% end %>  	
   </tr>
 </table>
 
-<%= link_to 'Ukázat', edit_hour_path(@hour) %> |
+<%= link_to 'Upravit', edit_hour_path(@hour) %> |
 <%= link_to 'Zpět', hours_path %>

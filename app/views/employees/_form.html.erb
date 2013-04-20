@@ -10,6 +10,10 @@
   	  <td><%= f.text_field :LAST_NAME %></td>
   	</tr>
   	<tr>
+  	  <th>Učitel</th>
+  	  <td><%= f.check_box(:TEACHER_FLAG, {}, checked_value = 1, unchecked_value = 0) %></td>
+  	</tr>
+  	<tr>
   	  <th>Adresa</th>
   	  <td><%= f.text_field :ADDRESS %></td>
   	</tr>

@@ -1,0 +1,24 @@
+<h1>Předměty</h1>
+
+<table>
+  <tr>
+    <th>Název</th>
+    <th>Zkratka</th>    
+  </tr>
+
+<% @subjects.each do |subject| %>
+  <tr>
+  	<td><%=h subject.NAME %></td>
+  	<td><%=h subject.SHORT_NAME %></td>
+    <td><%= link_to 'Ukázat', subject %></td>
+    <td><%= link_to 'Upravit', edit_subject_path(subject) %></td>
+    <td><%= link_to 'Smazat', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nový předmět', new_subject_path %>
+<br />
+<a class="button" href="admin"><image src="assets/go-back-icon.png" height="26" width="26" title="Zpět do hlavního menu" /></a>

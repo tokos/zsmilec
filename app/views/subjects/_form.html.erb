@@ -1,0 +1,37 @@
+<%= form_for(@subject) do |f| %>
+
+<table>
+  <tr>
+  	<th>Název předmětu</th>
+  	<td><%= f.text_field :NAME %></td>
+  </tr>
+  <tr>
+  	<th>Zkratka</th>
+  	<td><%= f.text_field :SHORT_NAME %></td>
+  </tr>
+  <tr> 	
+  	<th>Popis</th>
+  	<td><%= f.text_field :DESCRIPTION %></td>
+  </tr>
+  <tr>
+  	<th>Vyučující</th>
+  	<td><%= f.select :EMPLOYEE_ID, options_for_select(@employees_map, @subject.EMPLOYEE_ID), :include_blank => true %></td>
+  </tr>
+</table>
+
+  <% if @subject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
+
+      <ul>
+      <% @subject.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit 'Uložit' %>
+  </div>
+<% end %>

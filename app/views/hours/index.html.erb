@@ -29,7 +29,11 @@
   	<td><%=h hour.POSITION %>.</td>
   	<td><%=h Day.find(hour.DAY_ID).NAME %></td>
   	<td><%=h hour.HOUR %></td>
-  	<td><%=h hour.SUBJECT_ID %></td>
+  	<% if hour.SUBJECT_ID == nil and hour.SUBJECT_ID != '' %>
+  	  <td><%=h hour.SUBJECT_ID %></td>
+  	<% else %>  
+  	  <td><%=h Subject.find(hour.SUBJECT_ID).SHORT_NAME %></td>
+  	<% end %>  
   	<td><%=h hour.NOTE %></td>
     <td><%= link_to 'Ukázat', hour %></td>
     <td><%= link_to 'Upravit', edit_hour_path(hour) %></td>

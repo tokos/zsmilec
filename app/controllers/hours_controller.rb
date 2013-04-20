@@ -29,6 +29,11 @@ class HoursController < ApplicationController
       timetable = Timetable.find(day.TIMETABLE_ID)
       @days_map[day.NAME+" "+timetable.NAME] = day.ID
     end
+    
+    @subjects_map = {}    
+    Subject.all.each do |subject|
+      @subjects_map[subject.NAME] = subject.ID
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -66,6 +71,11 @@ class HoursController < ApplicationController
       @days_map[day.NAME+" "+timetable.NAME] = day.ID
     end
 
+    @subjects_map = {}
+    Subject.all.each do |subject|
+      @subjects_map[subject.NAME] = subject.ID
+    end
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @hour }
@@ -82,6 +92,12 @@ class HoursController < ApplicationController
       timetable = Timetable.find(day.TIMETABLE_ID)
       @days_map[day.NAME+" "+timetable.NAME] = day.ID
     end
+    
+    @subjects_map = {}
+    Subject.all.each do |subject|
+      @subjects_map[subject.NAME] = subject.ID
+    end
+    
   end
 
   # POST /hours

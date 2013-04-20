@@ -7,5 +7,5 @@ class Subject < ActiveRecord::Base
   has_many :tasks
   has_and_belongs_to_many :pupils
   
-  attr_accessible :NAME, :SHORT_NAME, :DESCRIPTION, :DAY_ID, :EMPLOYEE_ID, :POSITION
+  attr_accessible :NAME, :SHORT_NAME, :DESCRIPTION, :HOUR_ID, :EMPLOYEE_ID, :POSITION
 end

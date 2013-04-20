@@ -9,7 +9,13 @@
   <tr>
   <% Employee.column_names.each do |column_name| %>
   	<% if column_name == "ENTRY_DATE" %>
-  	  <td><%=h @employee[column_name].strftime("%d.%m.%Y") %></td>  	
+  	  <td><%=h @employee[column_name].strftime("%d.%m.%Y") %></td>
+  	<% elsif column_name == "TEACHER_FLAG" %>
+  	  <% if @employee[column_name] == 1 %>
+  	    <td>Ano</td>
+  	  <% else %>
+  	    <td>Ne</td>
+  	  <% end %>  	
   	<% else %>
   	  <td><%=h @employee[column_name] %></td>  
   	<% end %>
