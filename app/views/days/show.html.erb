@@ -14,4 +14,4 @@
 </table>
 
 <%= link_to 'Upravit', edit_day_path(@day) %> |
-<%= link_to 'Zpět', days_path %>
+<%= link_to 'Zpět', days_path+'?t='+@day.TIMETABLE_ID.to_s %>

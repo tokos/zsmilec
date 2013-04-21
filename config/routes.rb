@@ -7,11 +7,15 @@ RailsinstallerDemo::Application.routes.draw do
   # ADMIN section
   # **************
 
-  resources :hours
+  resources :hours      
+  
+  match 'hours?' => 'hours#index'
   
   match 'hours/select_timetable' => 'hours#select_timetable'  
 
   resources :days
+  
+  match 'days?' => 'days#index'
   
   match 'days/select_timetable' => 'days#select_timetable'
 

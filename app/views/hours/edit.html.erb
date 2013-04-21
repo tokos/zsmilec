@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Ukázat', @hour %> |
-<%= link_to 'Zpět', hours_path %>
+<%= link_to 'Zpět', hours_path+'?d='+@hour.DAY_ID.to_s+'&t='+Day.find(@hour.DAY_ID).TIMETABLE_ID.to_s %>
