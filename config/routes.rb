@@ -1,8 +1,5 @@
 RailsinstallerDemo::Application.routes.draw do
 
-  resources :subjects
-
-
   # **************
   # ADMIN section
   # **************
@@ -30,6 +27,10 @@ RailsinstallerDemo::Application.routes.draw do
   resources :schools
   
   resources :admin
+  
+  resources :pupils
+
+  resources :subjects
   
   # **************************************************************
 

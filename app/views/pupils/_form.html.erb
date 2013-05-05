@@ -1,0 +1,65 @@
+<%= form_for(@pupil) do |f| %>
+
+  <table>
+    <tr>
+  	  <th>Jméno</th>
+  	  <td><%= f.text_field :FIRST_NAME %></td>
+  	</tr>
+  	<tr>
+  	  <th>Příjmení</th>
+  	  <td><%= f.text_field :LAST_NAME %></td>
+  	</tr>
+  	<tr>
+  	  <th>login</th>
+  	  <td><%= f.text_field :LOGIN %></td>
+  	</tr>
+  	<tr>
+  	  <th>Adresa</th>
+  	  <td><%= f.text_field :ADDRESS %></td>
+  	</tr>
+  	<tr>
+  	  <th>Email</th>
+  	  <td><%= f.text_field :EMAIL %></td>
+  	</tr>
+  	<tr>
+  	  <th>Datum narození</th>
+  	  <% if @pupil.BIRTH_DATE == nil%>
+  	    <td><%= f.text_field :BIRTH_DATE %></td>
+  	  <% else %>  
+  	    <td><%= f.text_field :BIRTH_DATE, :value => @pupil.BIRTH_DATE.strftime("%d.%m.%Y") %></td>
+  	  <% end %>  
+  	</tr>
+  	<tr>
+  	  <th>Rodné číslo</th>
+  	  <td><%= f.text_field :BIRTH_NUMBER %></td>
+  	</tr>
+  	<tr>
+  	  <th>Kontakt na rodiče</th>
+  	  <td><%= f.text_field :PARENT_CONTACT %></td>
+  	</tr>
+  	<tr>
+  	  <th>Heslo</th>
+  	  <td><%= f.text_field :PASSWORD %></td>
+  	</tr>
+  	<tr>
+  	  <th>Rodič</th>
+  	  <td><%= f.select :PARENT_ID, options_for_select(@parent_map, @pupil.PARENT_ID) %></td>
+  	</tr>  	      	
+  </table>
+
+  <% if @pupil.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pupil.errors.count, "error") %> prohibited this pupil from being saved:</h2>
+
+      <ul>
+      <% @pupil.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Uložit" %>
+  </div>
+<% end %>
