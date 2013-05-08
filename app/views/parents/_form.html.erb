@@ -1,0 +1,49 @@
+<%= form_for(@parent) do |f| %>
+
+  <table>
+    <tr>
+  	  <th>Jméno</th>
+  	  <td><%= f.text_field :FIRST_NAME %></td>
+  	</tr>
+  	<tr>
+  	  <th>Příjmení</th>
+  	  <td><%= f.text_field :LAST_NAME %></td>
+  	</tr>
+  	<tr>
+  	  <th>Login</th>
+  	  <td><%= f.text_field :LOGIN %></td>
+  	</tr>
+  	<tr>
+  	  <th>Heslo</th>
+  	  <td><%= f.password_field :PASSWORD %></td>
+  	</tr>
+  	<tr>
+  	  <th>Adresa</th>
+  	  <td><%= f.text_field :ADDRESS %></td>
+  	</tr>
+  	<tr>
+  	  <th>Telefon</th>
+  	  <td><%= f.text_field :PHONE %></td>
+  	</tr>
+  	<tr>
+  	  <th>Email</th>
+  	  <td><%= f.text_field :EMAIL %></td>
+  	</tr>
+  </table>
+
+  <% if @parent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@parent.errors.count, "error") %> prohibited this parent from being saved:</h2>
+
+      <ul>
+      <% @parent.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Uložit" %>
+  </div>
+<% end %>

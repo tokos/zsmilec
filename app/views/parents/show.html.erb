@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+  	<% Parent.column_names.each do |column_name| %>
+  	<th><%=h column_name %></th>
+  	<% end %>
+  </tr>
+  <tr>
+  <% Parent.column_names.each do |column_name| %>
+  	<td><%=h @parent[column_name] %></td>
+  <% end %>  	
+  </tr>
+</table>
+
+<%= link_to 'Upravit', edit_parent_path(@parent) %> |
+<%= link_to 'Zpět', parents_path %>

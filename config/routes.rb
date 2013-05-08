@@ -32,6 +32,8 @@ RailsinstallerDemo::Application.routes.draw do
 
   resources :subjects
   
+  resources :parents
+  
   # **************************************************************
 
 
