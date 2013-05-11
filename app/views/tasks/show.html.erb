@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+  	<% Task.column_names.each do |column_name| %>
+  	<th><%=h column_name %></th>
+  	<% end %>
+  </tr>
+  <tr>
+  	<% Task.column_names.each do |column_name| %>
+  	<td><%=h @task[column_name] %></td>
+  	<% end %>
+  </tr>
+</table>
+
+<%= link_to 'Upravit', edit_task_path(@task) %> |
+<%= link_to 'Zpět', tasks_path %>

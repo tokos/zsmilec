@@ -1,0 +1,30 @@
+<h1>Seznam úkolů</h1>
+
+<table>
+  <tr>
+    <th>Název</th>
+    <th>Termín</th>    
+    <th>Stav</th>
+  </tr>
+
+<% @tasks.each do |task| %>
+  <tr>
+  	<td><%= task.NAME %></td>
+  	<% if task.DEADLINE == nil%>
+  	  <td><%= task.DEADLINE %></td>
+  	<% else %>
+  	  <td><%= task.DEADLINE.strftime("%d.%m.%Y") %></td>
+  	<% end %> 
+  	<td><%= Task_state.find_by_id(task.STATE).label %></td>
+    <td><%= link_to 'Ukázat', task %></td>
+    <td><%= link_to 'Upravit', edit_task_path(task) %></td>
+    <td><%= link_to 'Smazat', task, method: :delete, data: { confirm: 'Jste si jisti?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nový úkol', new_task_path %>
+<br />
+<a class="button" href="admin"><image src="assets/go-back-icon.png" height="26" width="26" title="Zpět do hlavního menu" /></a>
