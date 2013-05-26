@@ -16,6 +16,8 @@
   	  <% else %>
   	    <td>Ne</td>
   	  <% end %>  	
+  	<% elsif column_name == "image" %>  	  
+  	  <td><%= image_tag @employee.image_url(:thumb).to_s %></td>
   	<% else %>
   	  <td><%=h @employee[column_name] %></td>  
   	<% end %>

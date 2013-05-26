@@ -1,6 +1,10 @@
-<%= form_for(@employee) do |f| %>
+<%= form_for @employee, html: { multipart: true } do |f| %>
 
   <table>
+  	<tr>
+  	  <th>Titul</th>
+  	  <td><%= f.text_field :DEGREE %></td>
+  	</tr>
     <tr>
   	  <th>Jméno</th>
   	  <td><%= f.text_field :FIRST_NAME %></td>
@@ -36,7 +40,11 @@
   	<tr>
   	  <th>Pozice</th>
   	  <td><%= f.text_field :POSITION %></td>
-    </tr>    
+    </tr> 
+    <tr>
+      <th>Foto</th>
+      <td><%= f.file_field :image %></td>	
+    </tr>   
   </table>
 
   <% if @employee.errors.any? %>

@@ -2,12 +2,14 @@
 
 <table>
   <tr>
+  	<th>Titul</th>
   	<th>Jméno</th>
   	<th>Příjmení</th>
   	<th>Pozice</th>
   </tr>	
 <% @employees.each do |employee| %>
-  <tr>
+  <tr>  	
+  	<td><%=h employee.DEGREE %></td>
   	<td><%=h employee.FIRST_NAME %></td>
   	<td><%=h employee.LAST_NAME %></td>
   	<td><%=h employee.POSITION %></td>
