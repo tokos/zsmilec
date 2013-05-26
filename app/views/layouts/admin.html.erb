@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html>
+<head>
+  <title>ZŠ Mileč</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta charset="UTF-8">
+  <meta name="author" content="Bc. Tomáš Kohout" />
+  <meta name="keywords" content="ZŠ, ZŠ Mileč, škola mileč, základka Mileč, school Mileč" />
+  <meta name="description" content="School Official website" />
+  <meta name="robots" content="index, folow" />
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link href="favicon.ico" rel="icon" type="image/ico" />
+</head>
+<body>
+
+  <div id="obal">
+  	
+  	<div id="hlavicka">
+      <h1 class="admin">*** Administrační sekce ***</h1>      
+    </div>    
+    
+    <div id="sloupec1">
+      <div id="sloupec1-in">
+      	
+      	<%= yield %>
+      	
+      </div>
+    </div>	
+        
+    <div id="sloupec2">
+      <div id="sloupec2-in">
+      	<div id="navigation-block">  
+  		  <ul id="sliding-navigation">    
+    	    <li class="sliding-element"><%= link_to 'Škola', "/schools", :title => "Adresa, telefon, email, ředitel,..." %></li>
+            <li class="sliding-element"><%= link_to 'Aktuality a události harmonogramu', "/events", :title => "Přidání a úprava aktualit a událostí" %></li>
+            <li class="sliding-element"><%= link_to 'Zaměstnanci', "/employees", :title => "Management zaměstnanců" %></li>
+            <li class="sliding-element"><%= link_to 'Rozvrh hodin', "/timetables", :title => "Úprava rozvrhu hodin předmětů" %></li>
+            <li class="sliding-element"><%= link_to 'Vyučovací dny', "/days", :title => "Úprava vyučovacích dnů" %></li>
+            <li class="sliding-element"><%= link_to 'Vyučovací hodiny', "/hours", :title => "Úprava vyučovacích hodin" %></li>     
+            <li class="sliding-element"><%= link_to 'Předměty', "/subjects", :title => "Úprava předmětů" %></li>
+            <li class="sliding-element"><%= link_to 'Úkoly', "/tasks", :title => "Úprava úkolů" %></li>
+            <li class="sliding-element"><%= link_to 'Výsledky', "/results", :title => "Úprava výsledků" %></li>
+            <li class="sliding-element"><%= link_to 'Žákovská rada', "/councils", :title => "Úprava žákovské rady" %></li>
+            <li class="sliding-element"><%= link_to 'Žáci', "/pupils", :title => "Žactvo" %></li>
+            <li class="sliding-element"><%= link_to 'Rodiče', "/parents", :title => "Rodiče" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>	
+
+	<div class="cleaner">&nbsp;</div>
+  	<hr class="noscreen" />
+    <div id="paticka">
+     <p class="paticka">Webmaster: Bc. Tomáš Kohout@2013 (tokos.textar@seznam.cz), Technologie: Ruby on Rails</p>
+    </div>
+  </div>  
+</body>
+</html>

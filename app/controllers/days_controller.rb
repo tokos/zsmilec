@@ -1,5 +1,7 @@
 class DaysController < ApplicationController
   
+  layout "admin"
+  
   # POST /days/select_timetable  
   def select_timetable
     if params[:timetable] == nil or params[:timetable] == ""

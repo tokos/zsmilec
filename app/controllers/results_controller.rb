@@ -1,4 +1,7 @@
 class ResultsController < ApplicationController
+  
+  layout "admin"
+  
   # GET /results
   # GET /results.json
   def index

@@ -1,6 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<table>
+<table class="presscard">
+  <tr>
+  	<% if @employee.image? %>
+  	  <td rowspan="7"><%= image_tag @employee.image_url(:thumb).to_s %></td>
+  	<% else %>
+  	  <td rowspan="7" style="width: 150px; height: 170px; border: 1px solid #000000; text-align: center;">foto</td>
+  	<% end %>
+  	<td colspan="2" style="font-weight: bold; font-size: medium;"><%= @employee.DEGREE+" "+@employee.FIRST_NAME+" "+@employee.LAST_NAME %></td>
+  </tr>
+  <tr>
+  	<th>adresa:</th>
+  	<td><%= @employee.ADDRESS %></td>  	  	
+  </tr>	
+  <tr>
+  	<th>telefon:</th>
+  	<td><%= @employee.PHONE %></td>  	  	
+  </tr>
+  <tr>
+  	<th>email:</th>
+  	<td><%= @employee.EMAIL %></td>  	  	
+  </tr>
+  <tr>
+  	<th>datum nástupu:</th>
+  	<td><%= @employee.ENTRY_DATE.strftime("%d.%m.%Y") %></td>  	  	
+  </tr>
+  <tr>
+  	<th>pozice:</th>
+  	<td><%= @employee.POSITION %></td>  	  	
+  </tr>
+  <tr>
+  	<th>učitel:</th>
+  	<% if @employee.TEACHER_FLAG == 1 %>
+  	    <td>Ano</td>
+  	  <% else %>
+  	    <td>Ne</td>
+  	  <% end %>  	  	
+  </tr>
+	
+<!--	
   <tr>
   	<% Employee.column_names.each do |column_name| %>
   	<th><%=h column_name %></th>
@@ -23,6 +61,7 @@
   	<% end %>
   <% end %>  	
   </tr>
+ -->
 </table>
 
 <%= link_to 'Upravit', edit_employee_path(@employee) %> |

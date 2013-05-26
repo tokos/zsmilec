@@ -1,4 +1,7 @@
 class EmployeesController < ApplicationController
+  
+  layout "admin"
+  
   # GET /employees
   # GET /employees.json
   def index

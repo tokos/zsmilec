@@ -1,4 +1,7 @@
 class ParentsController < ApplicationController
+  
+  layout "admin"
+  
   # GET /parents
   # GET /parents.json
   def index

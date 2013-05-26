@@ -1,4 +1,7 @@
 class TimetablesController < ApplicationController
+  
+  layout "admin"
+  
   # GET /timetables
   # GET /timetables.json
   def index

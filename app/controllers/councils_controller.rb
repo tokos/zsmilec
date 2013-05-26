@@ -1,4 +1,7 @@
 class CouncilsController < ApplicationController
+  
+  layout "admin"
+  
   # GET /councils
   # GET /councils.json
   def index

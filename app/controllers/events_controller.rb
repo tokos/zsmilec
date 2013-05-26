@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   
+  layout "admin"
+  
   #TODO login before filter
   #---------------------------------------------------------------------
   

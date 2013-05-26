@@ -1,4 +1,7 @@
 class PupilsController < ApplicationController
+  
+  layout "admin"
+  
   # GET /pupils
   # GET /pupils.json
   def index

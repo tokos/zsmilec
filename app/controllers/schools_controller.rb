@@ -1,5 +1,7 @@
 class SchoolsController < ApplicationController
   
+  layout "admin"
+  
   #TODO login before filter
   #---------------------------------------------------------------------
   

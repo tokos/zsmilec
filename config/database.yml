@@ -11,7 +11,7 @@ development:
   
   adapter: mysql2
   encoding: utf8
-  database: zs-milec2
+  database: zs-milec3
   host: localhost  
   username: root
   password: Karolina2010
@@ -24,7 +24,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: zs-milec2
+  database: zs-milec3
   host: localhost  
   username: root
   password: Karolina2010
@@ -34,7 +34,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: zs-milec2
+  database: zs-milec3
   host: localhost  
   username: root
   password: Karolina2010
