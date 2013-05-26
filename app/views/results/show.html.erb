@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+  	<% Result.column_names.each do |column_name| %>
+  	<th><%=h column_name %></th>
+  	<% end %>
+  </tr>
+  <tr>
+  	<% Result.column_names.each do |column_name| %>
+  	  <% if column_name == "RESULT_DATE" %>
+  	    <td><%=h @result[column_name].strftime("%d.%m.%Y") %></td>
+  	  <% elsif column_name == "PUPIL_ID" %>  
+  	    <td><%=h Pupil.find(@result[column_name]).LAST_NAME %></td>
+  	  <% elsif column_name == "SUBJECT_ID" %>
+  	    <td><%=h Subject.find(@result[column_name]).NAME %></td>
+  	  <% else %>    
+  	    <td><%=h @result[column_name] %></td>
+  	  <% end %>
+  	<% end %>  
+  </tr>
+</table>
+
+
+<%= link_to 'Upravit', edit_result_path(@result) %> |
+<%= link_to 'Zpět', results_path %>

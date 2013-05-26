@@ -1,0 +1,49 @@
+<%= form_for(@result) do |f| %>
+
+  <table>
+  	<tr>
+  	  <th>Datum</th>
+  	  <% if @result.RESULT_DATE == nil %>
+  	  	<td><%= f.text_field :RESULT_DATE %></td>
+  	  <% else %>
+  	    <td><%= f.text_field :RESULT_DATE, :value => @result.RESULT_DATE.strftime("%d.%m.%Y") %></td>
+  	  <% end %>	
+  	</tr>
+  	<tr>
+  	  <th>Žák</th>
+  	  <td><%= f.select :PUPIL_ID, options_for_select(@pupil_map, @result.PUPIL_ID) %></td>
+  	</tr>
+  	<tr>
+  	  <th>Předmět</th>
+  	  <td><%= f.select :SUBJECT_ID, options_for_select(@subject_map, @result.SUBJECT_ID) %></td>
+  	</tr>
+    <tr>
+  	  <th>Název úkolu</th>
+  	  <td><%= f.text_field :NAME %></td>
+  	</tr>
+  	<tr>
+  	  <th>Popis</th>
+  	  <td><%= f.text_field :DESCRIPTION %></td>
+  	</tr>
+  	<tr>
+  	  <th>Hodnocení</th>
+  	  <td><%= f.text_field :EVALUATION %></td>
+  	</tr>
+  </table>
+
+  <% if @result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@result.errors.count, "error") %> prohibited this result from being saved:</h2>
+
+      <ul>
+      <% @result.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Uložit" %>
+  </div>
+<% end %>

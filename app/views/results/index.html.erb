@@ -1,0 +1,30 @@
+<h1>Výsledky (úkoly, písemky, zkoušení)</h1>
+
+<table>
+  <tr>
+    <th>Datum</th>
+    <th>Žák</th>
+    <th>Předmět</th>
+    <th>Název</th>    
+    <th>Hodnocení</th>
+  </tr>
+
+<% @results.each do |result| %>
+  <tr>
+  	<td><%= result.RESULT_DATE %></td>
+  	<td><%= Pupil.find(result.PUPIL_ID).LAST_NAME %></td>
+  	<td><%= Subject.find(result.SUBJECT_ID).NAME %></td>
+  	<td><%= result.NAME %></td>
+  	<td><%= result.EVALUATION %></td>
+    <td><%= link_to 'Ukázat', result %></td>
+    <td><%= link_to 'Upravit', edit_result_path(result) %></td>
+    <td><%= link_to 'Smazat', result, method: :delete, data: { confirm: 'Jste si jisti?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nový výsledek', new_result_path %>
+<br />
+<a class="button" href="admin"><image src="assets/go-back-icon.png" height="26" width="26" title="Zpět do hlavního menu" /></a>
