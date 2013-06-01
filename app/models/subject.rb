@@ -1,6 +1,6 @@
 class Subject < ActiveRecord::Base
   
-  set_primary_key "ID"
+  self.primary_key = "ID"
   
   belongs_to :day
   belongs_to :employee

@@ -1,6 +1,6 @@
 class Pupil < ActiveRecord::Base
   
-  set_primary_key "ID"
+  self.primary_key = "ID"
   
   has_one :parent
   has_and_belongs_to_many :subjects
