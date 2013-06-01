@@ -17,8 +17,18 @@
 <% end %>
 </table>
 
+Vytvořit ručně:
 <br />
-
 <%= link_to 'Nový rozvrh', new_timetable_path %>
+<br />
+<div style="margin-top: 30px; border-top: 3px ridge #000; border-right: 3px ridge #000; width: 400px;">
+  Importovat rozvrh ze souboru:
+  <%= form_tag("/admin/timetables/import", :method =>'post', :multipart => true) do %>
+    <%= file_field_tag "import_file" %>
+    <%= button_tag(:type => 'submit') do %>
+     Naimportovat
+    <% end %>  
+  <% end %>
+</div>  
 <br />
 <a class="button" href="admin"><image src="assets/go-back-icon.png" height="26" width="26" title="Zpět do hlavního menu" /></a>

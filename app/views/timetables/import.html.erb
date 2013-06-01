@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="table"><%= @timetable.NAME %></h1>
+<h2>Rozvrh hodin</h2>
+<table>
+  <tr>
+  	<th>Den</th>
+  	<th>1.</th>
+  	<th>2.</th>
+  	<th>3.</th>
+  	<th>4.</th>
+  	<th>5.</th>
+  </tr>
+  <% Day.where(:TIMETABLE_ID => @timetable.ID).order(:POSITION).each do |day| %>
+    <tr>
+  	  <td><%= day.NAME %></td>
+  	  <% Hour.where(:DAY_ID => day.ID).order(:POSITION).each do |hour| %>
+  	    <% if hour.SUBJECT_ID != nil %>
+  	      <% subject = Subject.find(hour.SUBJECT_ID) %>
+  	      <td><%= subject.SHORT_NAME %></td>
+  	    <% else %>
+  	      <td></td>
+  	    <% end %>    
+  	  <% end %>  	
+    </tr>  
+  <% end %>
+</table>
+
+<%= link_to 'Upravit', edit_timetable_path(@timetable) %> |
+<%= link_to 'Zpět', timetables_path %>

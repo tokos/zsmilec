@@ -19,6 +19,8 @@ RailsinstallerDemo::Application.routes.draw do
   resources :councils
 
   resources :timetables
+  
+  match 'admin/timetables/import' => 'timetables#import'
 
   resources :employees
 

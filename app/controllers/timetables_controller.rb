@@ -1,6 +1,19 @@
+# encoding: utf-8
+
 class TimetablesController < ApplicationController
   
   layout "admin"
+  
+  def import
+    t = TimetableImport.new    
+    @timetable = t.import(params[:import_file])
+    
+    respond_to do |format|
+      format.html # import.html.erb
+      format.json { render json: @timetable }
+    end
+    
+  end
   
   # GET /timetables
   # GET /timetables.json
@@ -47,7 +60,7 @@ class TimetablesController < ApplicationController
 
     respond_to do |format|
       if @timetable.save
-        format.html { redirect_to @timetable, notice: 'Timetable was successfully created.' }
+        format.html { redirect_to @timetable, notice: 'Rozvrh byl úspěšně vytvořen.' }
         format.json { render json: @timetable, status: :created, location: @timetable }
       else
         format.html { render action: "new" }
@@ -63,7 +76,7 @@ class TimetablesController < ApplicationController
 
     respond_to do |format|
       if @timetable.update_attributes(params[:timetable])
-        format.html { redirect_to @timetable, notice: 'Timetable was successfully updated.' }
+        format.html { redirect_to @timetable, notice: 'Rozrvh byl úspěšně upraven.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
