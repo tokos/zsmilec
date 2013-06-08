@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class DaysController < ApplicationController
   
   layout "admin"
@@ -84,7 +86,7 @@ class DaysController < ApplicationController
 
     respond_to do |format|
       if @day.save
-        format.html { redirect_to @day, notice: 'Day was successfully created.' }
+        format.html { redirect_to @day, notice: 'Den byl úspěšně vytvořen.' }
         format.json { render json: @day, status: :created, location: @day }
       else
         format.html { render action: "new" }
@@ -100,7 +102,7 @@ class DaysController < ApplicationController
 
     respond_to do |format|
       if @day.update_attributes(params[:day])
-        format.html { redirect_to @day, notice: 'Day was successfully updated.' }
+        format.html { redirect_to @day, notice: 'Den byl úspěšně upraven.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

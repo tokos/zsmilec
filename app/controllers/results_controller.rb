@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class ResultsController < ApplicationController
   
   layout "admin"
@@ -77,7 +79,7 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       if @result.save
-        format.html { redirect_to @result, notice: 'Result was successfully created.' }
+        format.html { redirect_to @result, notice: 'Výsledek byl úspěšně vytvořen.' }
         format.json { render json: @result, status: :created, location: @result }
       else
         format.html { render action: "new" }
@@ -93,7 +95,7 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       if @result.update_attributes(params[:result])
-        format.html { redirect_to @result, notice: 'Result was successfully updated.' }
+        format.html { redirect_to @result, notice: 'Výsledek byl úspěšně upraven.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

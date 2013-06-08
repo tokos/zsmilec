@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class ParentsController < ApplicationController
   
   layout "admin"
@@ -47,7 +49,7 @@ class ParentsController < ApplicationController
 
     respond_to do |format|
       if @parent.save
-        format.html { redirect_to @parent, notice: 'Parent was successfully created.' }
+        format.html { redirect_to @parent, notice: 'Rodič byl úspěšně vytvořen.' }
         format.json { render json: @parent, status: :created, location: @parent }
       else
         format.html { render action: "new" }
@@ -63,7 +65,7 @@ class ParentsController < ApplicationController
 
     respond_to do |format|
       if @parent.update_attributes(params[:parent])
-        format.html { redirect_to @parent, notice: 'Parent was successfully updated.' }
+        format.html { redirect_to @parent, notice: 'Rodič byl úspěšně upraven.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

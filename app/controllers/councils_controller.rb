@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class CouncilsController < ApplicationController
   
   layout "admin"
@@ -47,7 +49,7 @@ class CouncilsController < ApplicationController
 
     respond_to do |format|
       if @council.save
-        format.html { redirect_to @council, notice: 'Council was successfully created.' }
+        format.html { redirect_to @council, notice: 'Žákovská rada byla úspěšně vytvořena.' }
         format.json { render json: @council, status: :created, location: @council }
       else
         format.html { render action: "new" }
@@ -63,7 +65,7 @@ class CouncilsController < ApplicationController
 
     respond_to do |format|
       if @council.update_attributes(params[:council])
-        format.html { redirect_to @council, notice: 'Council was successfully updated.' }
+        format.html { redirect_to @council, notice: 'Žákovská rada byla úspěšně upravena.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

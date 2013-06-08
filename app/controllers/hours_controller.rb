@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class HoursController < ApplicationController
   
   layout "admin"
@@ -109,7 +111,7 @@ class HoursController < ApplicationController
 
     respond_to do |format|
       if @hour.save
-        format.html { redirect_to @hour, notice: 'Hour was successfully created.' }
+        format.html { redirect_to @hour, notice: 'Vyučovací hodina byla úspěšně vytvořena.' }
         format.json { render json: @hour, status: :created, location: @hour }
       else
         format.html { render action: "new" }
@@ -125,7 +127,7 @@ class HoursController < ApplicationController
 
     respond_to do |format|
       if @hour.update_attributes(params[:hour])
-        format.html { redirect_to @hour, notice: 'Hour was successfully updated.' }
+        format.html { redirect_to @hour, notice: 'Vyučovací hodina byla úspěšně upravena.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

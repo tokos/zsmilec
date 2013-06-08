@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'csv'
 
 class TimetableImport    
@@ -9,7 +11,7 @@ class TimetableImport
     begin
       row_index = 1
       day_index = 1
-      puts "*** Importing CSV file (timetable) ***"
+      puts "*** Importuji CSV soubor (rozvrh) ***"
       CSV.foreach(import_file.path) do |csv_row|        
         
         if row_index > 1                          # without header
@@ -23,12 +25,12 @@ class TimetableImport
             
               if res.any?
                 t = res.first
-                puts "Updating existing Timetable"
+                puts "Upravuji existující rozvrh"
                 Timetable.update(t.ID, :NAME => name, :YEAR => year)
                 t.NAME = name
                 t.YEAR = year
               else
-                puts "Creating new Timetable"
+                puts "Vytvářím nový rozvrh"
                 t = Timetable.new(:NAME => name,:YEAR => year)
                 t.save
               end              
@@ -42,16 +44,16 @@ class TimetableImport
             # Day
             d = nil
             day = csv_row[2]
-            puts "Importing day: "+day
+            puts "Importuji den: "+day
             res_day = Day.where(:NAME => day, :POSITION => day_index, :TIMETABLE_ID => t.ID)
             if res_day.any?
               d = res_day.first
-              puts "Updating existing day"
+              puts "Upravuji existující den"
               Day.update(d.ID, :NAME => day, :POSITION => day_index)
               d.NAME = day
               d.POSITION = day_index
             else
-              puts "Creating new day"
+              puts "Vytvářím nová den"
               d = Day.new(:NAME => day, :POSITION => day_index, :TIMETABLE_ID => t.ID)
               d.save
             end
@@ -66,16 +68,16 @@ class TimetableImport
                 res_hour = Hour.where(:DAY_ID => d.ID, :POSITION => (hour_index-2))
                 if res_hour.any?
                   h = res_hour.first
-                  puts "Updating existing Hour in day"
+                  puts "Upravuji existující vyučovací hodinu"
                   Hour.update(h.ID, :SUBJECT_ID => s.ID)
                   h.SUBJECT_ID = s.ID
                 else                      
-                  puts "Creating new Hour in day"
+                  puts "Vytvářím novou vyučovací hodinu"
                   h = Hour.new(:DAY_ID => d.ID, :POSITION => (hour_index-2), :SUBJECT_ID => s.ID)
                   h.save
                 end
               else
-                # TODO nenalezen predmet v DB -> prerusit import (vyhodit hlasku)
+                raise StandardError, "Předmět" + subject + " není v databázi."
               end
               hour_index += 1
               subject = csv_row[hour_index]

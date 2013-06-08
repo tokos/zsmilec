@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class PupilsController < ApplicationController
   
   layout "admin"
@@ -67,7 +69,7 @@ class PupilsController < ApplicationController
 
     respond_to do |format|
       if @pupil.save
-        format.html { redirect_to @pupil, notice: 'Pupil was successfully created.' }
+        format.html { redirect_to @pupil, notice: 'Žák byl úspěšně vytvořen.' }
         format.json { render json: @pupil, status: :created, location: @pupil }
       else
         format.html { render action: "new" }
@@ -83,7 +85,7 @@ class PupilsController < ApplicationController
 
     respond_to do |format|
       if @pupil.update_attributes(params[:pupil])
-        format.html { redirect_to @pupil, notice: 'Pupil was successfully updated.' }
+        format.html { redirect_to @pupil, notice: 'Žák byl úspěšně upraven.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -5,12 +5,20 @@ class TimetablesController < ApplicationController
   layout "admin"
   
   def import
-    t = TimetableImport.new    
-    @timetable = t.import(params[:import_file])
+    t = TimetableImport.new
+    begin    
+      @timetable = t.import(params[:import_file])
+    rescue Exception => e
+      puts e.message
+    end
     
-    respond_to do |format|
-      format.html # import.html.erb
-      format.json { render json: @timetable }
+    if @timetable != nil
+    
+      respond_to do |format|
+        format.html # import.html.erb
+        format.json { render json: @timetable }
+      end
+      
     end
     
   end
@@ -89,8 +97,22 @@ class TimetablesController < ApplicationController
   # DELETE /timetables/1.json
   def destroy
     @timetable = Timetable.find(params[:id])
-    @timetable.destroy
-
+    
+    if @timetable != nil
+    
+      res_day = Day.where(:TIMETABLE_ID => @timetable.ID)
+      res_day.each do |day|
+        res_hour = Hour.where(:DAY_ID => day.ID)
+        res_hour.each do |hour|
+          hour.destroy
+        end
+        day.destroy
+      end
+    
+      @timetable.destroy
+        
+    end
+    
     respond_to do |format|
       format.html { redirect_to timetables_url }
       format.json { head :no_content }
