@@ -23,7 +23,33 @@
     </div>
     <hr class="noscreen" />    
     
-    <%= yield %>
+    <div id="sloupec1">
+      <div id="sloupec1-in">
+      	
+      	<%= yield %>
+      	
+      </div>
+    </div>
+    
+	<div id="sloupec2">
+      <div id="sloupec2-in">
+      	<div id="navigation-block">  
+  		  <ul id="sliding-navigation">    
+    	    <li class="sliding-element"><%= link_to 'O Škole', "/normal/school", :title => "Adresa, telefon, email, ředitel,..." %></li>
+            <li class="sliding-element"><%= link_to 'Zaměstnanci', "/normal/employees", :title => "Seznam a informace o zaměstnancích" %></li>
+            <li class="sliding-element"><%= link_to 'Harmonogram', "/normal/actions", :title => "Důležitá data, Plánované akce" %></li>            
+            <li class="sliding-element"><%= link_to 'Rozvrh hodin', "/normal/timetable", :title => "Rozvrh hodin" %></li>
+            <li class="sliding-element"><%= link_to 'Žáci', "/normal/pupils", :title => "Informace pro žáky" %></li>
+            <li class="sliding-element"><%= link_to 'Rodiče', "/normal/parents", :title => "Informace pro rodiče" %></li>
+            <li class="sliding-element"><%= link_to 'Učebny', "/normal/rooms", :title => "Informace o prostorách školy" %></li>
+            <li class="sliding-element"><%= link_to 'Dokumenty', "/normal/documents", :title => "Dokumenty související s provozem školy" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>	
+
+	<div class="cleaner">&nbsp;</div>
+  	<hr class="noscreen" />    
 
     <div id="paticka">
      <p class="paticka">Webmaster: Bc. Tomáš Kohout@2013, Technologie: Ruby on Rails</p>

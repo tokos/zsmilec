@@ -41,6 +41,8 @@ RailsinstallerDemo::Application.routes.draw do
   resources :results
   
   # **************************************************************
+  
+  resources :normal
 
 
   # The priority is based upon order of creation:
