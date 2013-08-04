@@ -29,5 +29,11 @@ class NSchoolController < ApplicationController
       format.html # history.html.erb      
     end
   end
+  
+  def map
+    respond_to do |format|
+      format.html # map.html.erb      
+    end
+  end
     
 end

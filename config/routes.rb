@@ -41,10 +41,13 @@ RailsinstallerDemo::Application.routes.draw do
   resources :results
   
   # **************************************************************
+  # NORMAL VIEWS
+  # **************************************************************
+  #resources :normal
   
-  resources :normal
+  match 'normal' => 'n_school#index'
   
-  #resources :n_school
+  # school
   
   match 'n_school' => 'n_school#index'
   
@@ -55,6 +58,14 @@ RailsinstallerDemo::Application.routes.draw do
   match 'n_school/history' => 'n_school#history'
   
   match 'n_school/map' => 'n_school#map'
+  
+  # employees  
+  
+  resources :n_employees
+  
+  match 'n_employees' => 'n_employees#index'
+  
+  #match 'n_employees/show?' => 'n_employees#show'
 
 
   # The priority is based upon order of creation:

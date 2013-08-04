@@ -1,42 +1,12 @@
-<%= link_to 'Kontakt', '/n_school/contact', :title => '', :class => 'marked' %>
-<%= link_to 'Historie', '/n_school/history', :title => '' %>
+<%= link_to 'Kontakt', '/n_school/contact', :title => '' %>
+<%= link_to 'Historie', '/n_school/history', :title => '', :class => 'marked' %>
 <%= link_to 'Mapa', '/n_school/map', :title => '' %>
 <hr />
-<table class="admin" style="margin-top: 30px;">
-  <tr>
-  	<td>
-      <div style="margin-right: 50px;">
-        <h2>Ředitelka</h2>
-        <table class="admin">
-  	      <tr>
-  	        <td><%= @headmaster.DEGREE %> <%= @headmaster.FIRST_NAME %> <%= @headmaster.LAST_NAME %></td>	  	        
-  	      </tr>
-  	      <tr>
-  	      	<td><%= image_tag @headmaster.image_url(:thumb).to_s, :style => 'margin-top: 10px;' %></td>
-  	      </tr>
-        </table>
-      </div>	
-    </td>
-    <td>
-	 <div>
-       <h2>Adresa</h2>	
-       <table class="admin">
-  	     <tr>
-           <td><%= @school.NAME %></td>			
-  	     </tr>	
-  	     <tr>
-  	       <td><%= @school.ADDRESS %></td>	
-  	     </tr>
-       </table>
-     </div>
-     <div style="margin-top: 30px;">
-       <h2>Telefon</h2>
-       <table class="admin">
-  	     <tr>
-  	       <td><%= @school.PHONE %></td>	
-  	     </tr>
-       </table>
-     </div>    	
-    </td>
-  </tr>	
-</table>
+<div style="margin-top: 30px;">
+  <h2>Škola v Milči</h2>	
+  <p class="text">
+  	<img src="/assets/skola-big.png" height="152" width="203" style="margin: 10px; float: right;" />
+  	byla postavena v roce 1910. Její zdi tedy pamatují mnoho a jedná se o školu s dlouholetou tradicí.
+  	Ještě před stavbou současně budovy školy fungovala stará budova, kde probíhala výuka dětí.
+  </p>	
+</div>
