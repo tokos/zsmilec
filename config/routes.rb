@@ -43,6 +43,18 @@ RailsinstallerDemo::Application.routes.draw do
   # **************************************************************
   
   resources :normal
+  
+  #resources :n_school
+  
+  match 'n_school' => 'n_school#index'
+  
+  match 'normal/school' => 'n_school#index'
+  
+  match 'n_school/contact' => 'n_school#contact'
+  
+  match 'n_school/history' => 'n_school#history'
+  
+  match 'n_school/map' => 'n_school#map'
 
 
   # The priority is based upon order of creation:

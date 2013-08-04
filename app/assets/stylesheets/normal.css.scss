@@ -137,6 +137,13 @@ a.button:link, a.button:hover, a.button:visited
   background-color: white;
 }
 
+a.marked:link, a.marked:hover, a.marked:visited
+{
+  border: 1px solid black;
+  color: yellow;
+  background-color: black;
+}
+
 /****************************************/
 /*********** SLIDING MENU ***************/
 /****************************************/
@@ -239,4 +246,12 @@ p.citat
   font-style: italic;
   font-size: x-small;
   text-align: left;
+}
+
+p.text
+{
+  color: #000000;
+  font-size: small;
+  text-align: left;
+  font-family: Verdana;
 }

@@ -12,14 +12,15 @@
   <meta name="robots" content="index, folow" />
   <link rel="shortcut icon" href="assets/favicon.ico">
   <link href="favicon.ico" rel="icon" type="image/ico" />
+  <%= javascript_include_tag :defaults %>
 </head>
 <body>
 
   <div id="obal">
   	
   	<div id="hlavicka">
-      <img src="assets/skola-color.png" height="100" width="134" style="margin-right: 20%; float: left;" />
-      <img src="assets/milec-napis.png" height="60" width="260" /><br />
+      <img src="/assets/skola-color.png" height="100" width="134" style="margin-right: 20%; float: left;" />
+      <img src="/assets/milec-napis.png" height="60" width="260" /><br />
       <p class="citat">"Má-li se člověk stát člověkem, musí se vzdělat." J.A. Komenský</p>
     </div>
     <hr class="noscreen" />    
@@ -36,14 +37,14 @@
       <div id="sloupec2-in">
       	<div id="navigation-block">
   		  <ul id="sliding-navigation">    
-    	    <li class="sliding-element"><%= link_to 'O Škole', "/normal/school", :title => "Adresa, telefon, email, ředitel,..." %></li>
-            <li class="sliding-element"><%= link_to 'Zaměstnanci', "/normal/employees", :title => "Seznam a informace o zaměstnancích" %></li>
-            <li class="sliding-element"><%= link_to 'Harmonogram', "/normal/actions", :title => "Důležitá data, Plánované akce" %></li>            
-            <li class="sliding-element"><%= link_to 'Rozvrh hodin', "/normal/timetable", :title => "Rozvrh hodin" %></li>
-            <li class="sliding-element"><%= link_to 'Žáci', "/normal/pupils", :title => "Informace pro žáky" %></li>
-            <li class="sliding-element"><%= link_to 'Rodiče', "/normal/parents", :title => "Informace pro rodiče" %></li>
-            <li class="sliding-element"><%= link_to 'Učebny', "/normal/rooms", :title => "Informace o prostorách školy" %></li>
-            <li class="sliding-element"><%= link_to 'Dokumenty', "/normal/documents", :title => "Dokumenty související s provozem školy" %></li>
+    	    <li class="sliding-element"><%= link_to 'O Škole', "/n_school", :title => "Adresa, telefon, email, ředitel,..." %></li>
+            <li class="sliding-element"><%= link_to 'Zaměstnanci', "/n_employees", :title => "Seznam a informace o zaměstnancích" %></li>
+            <li class="sliding-element"><%= link_to 'Harmonogram', "/n_actions", :title => "Důležitá data, Plánované akce" %></li>            
+            <li class="sliding-element"><%= link_to 'Rozvrh hodin', "/n_timetable", :title => "Rozvrh hodin" %></li>
+            <li class="sliding-element"><%= link_to 'Žáci', "/n_pupils", :title => "Informace pro žáky" %></li>
+            <li class="sliding-element"><%= link_to 'Rodiče', "/n_parents", :title => "Informace pro rodiče" %></li>
+            <li class="sliding-element"><%= link_to 'Učebny', "/n_rooms", :title => "Informace o prostorách školy" %></li>
+            <li class="sliding-element"><%= link_to 'Dokumenty', "/n_documents", :title => "Dokumenty související s provozem školy" %></li>
           </ul>
         </div>
       </div>
