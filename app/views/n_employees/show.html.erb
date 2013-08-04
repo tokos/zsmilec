@@ -2,13 +2,13 @@
   <tr>
   	<th>Pozice</th>
   	<th>Zaměstnanec</th>
-  	<td rowspan="<%= @employees.size %>">
+  	<td rowspan="<%= @employees.size + 1 %>">
 	  <table class="presscard">
   <tr>
   	<% if @employee.image? %>
   	  <td rowspan="7"><%= image_tag @employee.image_url(:thumb).to_s %></td>
   	<% else %>
-  	  <td rowspan="7" style="width: 150px; height: 170px; border: 1px solid #000000; text-align: center;">foto</td>
+  	  <td rowspan="7" style="width: 128px; height: 170px; border: 1px solid #000000; text-align: center;">foto</td>
   	<% end %>
   	<td colspan="2" style="font-weight: bold; font-size: medium;"><%= @employee.DEGREE+" "+@employee.FIRST_NAME+" "+@employee.LAST_NAME %></td>
   </tr>
@@ -47,7 +47,7 @@
     <tr>
       <td><%= employee.POSITION %></td>
       <% name = employee.DEGREE+' '+employee.FIRST_NAME+' '+employee.LAST_NAME %>	
-      <td><%= link_to name, '/n_employees/'+employee.ID.to_s %></td>      
+      <td><%= link_to name, '/n_employees/'+employee.ID.to_s, :class => 'empl' %></td>      
     </tr>
   <% end %>	
 </table>

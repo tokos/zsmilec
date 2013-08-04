@@ -255,3 +255,18 @@ p.text
   text-align: left;
   font-family: Verdana;
 }
+
+a.empl, a.empl:link, a.empl:visited
+{
+  font-size: x-small;
+  color: blue;
+  border: none;
+}
+
+a.empl:hover
+{
+  font-size: x-small;
+  border: none;
+  color: yellow;
+  background-color: black;
+}
