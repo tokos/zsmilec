@@ -1,0 +1,16 @@
+<div style="margin-top: 30px;">
+  <h2>Rozvrh hodin</h2>
+  <p class="text">
+  	Vyberte rozvrh podle ročníku a příslušného pololetí.
+  </p>
+  <table class="admin">  	
+    <% @timetables.each do |timetable| %>
+      <tr>
+      	<td>
+      	  <% t = timetable.NAME + '(' + timetable.YEAR + ')' %>	
+		  <%= link_to t, '/n_timetable/'+timetable.ID.to_s, :title => 'Ukázat' %>      		
+      	</td>
+      </tr>
+    <% end %>
+  </table>	
+</div>	

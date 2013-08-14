@@ -49,9 +49,9 @@ RailsinstallerDemo::Application.routes.draw do
   
   # school
   
-  match 'n_school' => 'n_school#index'
+  match 'n_school' => 'n_school#history'
   
-  match 'normal/school' => 'n_school#index'
+  match 'normal/school' => 'n_school#history'
   
   match 'n_school/contact' => 'n_school#contact'
   
@@ -64,6 +64,10 @@ RailsinstallerDemo::Application.routes.draw do
   resources :n_employees
   
   match 'n_employees' => 'n_employees#index'
+  
+  resources :n_timetable
+  
+  match 'n_timetable' => 'n_timetable#index'
   
   #match 'n_employees/show?' => 'n_employees#show'
 
