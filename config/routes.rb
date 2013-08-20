@@ -65,6 +65,8 @@ RailsinstallerDemo::Application.routes.draw do
   
   match 'n_employees' => 'n_employees#index'
   
+  match 'show_employee' => 'n_employees#show_employee'
+  
   resources :n_timetable
   
   match 'n_timetable' => 'n_timetable#index'

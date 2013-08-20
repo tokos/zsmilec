@@ -1,10 +1,4 @@
-<table class="admin" style="font-size: x-small;">
-  <tr>
-  	<th>Pozice</th>
-  	<th>Zaměstnanec</th>
-  	<td rowspan="<%= @employees.size + 1 %>">
-	  <table class="presscard">
-  <tr>
+<tr>
   	<% if @employee.image? %>
   	  <td rowspan="7"><%= image_tag @employee.image_url(:thumb).to_s %></td>
   	<% else %>
@@ -39,15 +33,4 @@
   	  <% else %>
   	    <td>Ne</td>
   	  <% end %>  	  	
-  </tr>	
-</table>  		
-  	</td>
   </tr>
-  <% @employees.each do |employee| %>
-    <tr>
-      <td><%= employee.POSITION %></td>
-      <% name = employee.DEGREE+' '+employee.FIRST_NAME+' '+employee.LAST_NAME %>	
-      <td><%= link_to name, '/n_employees/'+employee.ID.to_s, :class => 'empl' %></td>      
-    </tr>
-  <% end %>	
-</table>
