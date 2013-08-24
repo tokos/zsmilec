@@ -77,6 +77,8 @@ RailsinstallerDemo::Application.routes.draw do
   
   match 'n_timetable' => 'n_timetable#index'
   
+  match 'show' => 'n_timetable#show'
+  
   #match 'n_employees/show?' => 'n_employees#show'
 
 

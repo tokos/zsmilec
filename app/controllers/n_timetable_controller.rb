@@ -19,9 +19,17 @@ class NTimetableController < ApplicationController
     
     @timetable = Timetable.find(params[:id])
     
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @timetable }
+    respond_to do | format |  
+        format.js {render :layout => false}  
+    end
+  end
+  
+  def show_timetable
+    
+    @timetable = Timetable.find(params[:id])
+    
+    respond_to do | format |  
+        format.js {render :layout => false}  
     end
   end
 end

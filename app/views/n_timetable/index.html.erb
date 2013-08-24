@@ -3,14 +3,24 @@
   <p class="text">
   	Vyberte rozvrh podle ročníku a příslušného pololetí.
   </p>
-  <table class="admin">  	
-    <% @timetables.each do |timetable| %>
-      <tr>
-      	<td>
-      	  <% t = timetable.NAME + '(' + timetable.YEAR + ')' %>	
-		  <%= link_to t, '/n_timetable/'+timetable.ID.to_s, :title => 'Ukázat' %>      		
-      	</td>
-      </tr>
-    <% end %>
+  <table class="admin"> <!-- Wrapping table -->
+  	<tr style="vertical-align: top;">
+  	  <td>	
+  		<table class="admin">  	
+    	<% @timetables.each do |timetable| %>
+      	  <tr>
+      	    <td>
+      	      <% t = timetable.NAME + '(' + timetable.YEAR + ')' %>	
+		      <%= link_to t, '/n_timetable/'+timetable.ID.to_s, :action => 'show', :title => 'Ukázat', :remote => true %>      		
+      	    </td>
+          </tr>
+        <% end %>
+        </table>
+      </td>
+      <td>
+        <div id="target"> <!-- Target of AJAX -->
+        </div>
+      </td>
+    </tr>
   </table>	
 </div>	
