@@ -14,7 +14,17 @@
   	  <% Hour.where(:DAY_ID => day.ID).order(:POSITION).each do |hour| %>
   	    <% if hour.SUBJECT_ID != nil %>
   	      <% subject = Subject.find(hour.SUBJECT_ID) %>
-  	      <td><%= subject.SHORT_NAME %></td>
+  	      <td onmouseover="$(this).find('div').show()" onmouseout="$(this).find('div').hide()" style="cursor: pointer;">
+  	      	<%= subject.SHORT_NAME %>
+  	      	<div class="subject">
+			  Předmět: <%= subject.NAME %>
+			  <%
+  				teacher = Employee.find(subject.EMPLOYEE_ID)  	      	    
+			  %>
+			  <br />  	      	  
+			  Vyučuje: <%= teacher.DEGREE+' '+teacher.FIRST_NAME+' '+teacher.LAST_NAME %>
+  	      	</div>
+  	      </td>
   	    <% else %>
   	      <td></td>
   	    <% end %>    
