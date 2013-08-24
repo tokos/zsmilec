@@ -19,20 +19,20 @@ class NSchoolController < ApplicationController
     @school = School.first
     @headmaster = Employee.where(:TEACHER_FLAG => 1).first
     
-    respond_to do |format|
-      format.html # contact.html.erb      
+    respond_to do | format |  
+        format.js {render :layout => false}  
     end
   end
   
   def history
-    respond_to do |format|
-      format.html # history.html.erb      
+    respond_to do | format |  
+        format.js {render :layout => false}  
     end
   end
   
   def map
-    respond_to do |format|
-      format.html # map.html.erb      
+    respond_to do | format |  
+        format.js {render :layout => false}  
     end
   end
     
