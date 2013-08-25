@@ -1,10 +1,12 @@
-<hr />
+<hr class="fancy-line" />
 <table class="admin" style="margin-top: 30px;">
   <tr>
   	<td>
       <div style="margin-right: 50px;">
-        <h2>Ředitelka</h2>
         <table class="admin">
+          <tr>
+          	<th class="h2">Ředitelka</th>
+          </tr>	
   	      <tr>
   	        <td><%= @headmaster.DEGREE %> <%= @headmaster.FIRST_NAME %> <%= @headmaster.LAST_NAME %></td>	  	        
   	      </tr>
@@ -16,21 +18,31 @@
     </td>
     <td>
 	 <div>
-       <h2>Adresa</h2>	
        <table class="admin">
+         <tr>
+           <th colspan="2" class="h2">Adresa</th>	
+         </tr>	       	 
   	     <tr>
-           <td><%= @school.NAME %></td>			
+           <td style="vertical-align: bottom;"><%= @school.NAME %></td>
+           <td rowspan="2"><img src="/assets/envelope.png" width="173" height="101" title="" alt="" /></td>
   	     </tr>	
   	     <tr>
-  	       <td><%= @school.ADDRESS %></td>	
+  	       <td style="vertical-align: top;"><%= @school.ADDRESS %></td>
   	     </tr>
-       </table>
-     </div>
-     <div style="margin-top: 30px;">
-       <h2>Telefon</h2>
-       <table class="admin">
   	     <tr>
-  	       <td><%= @school.PHONE %></td>	
+  	       <td class="h2">Email:</td>	
+  	       <td><%= @school.EMAIL %></td>
+  	     </tr>
+       </table>       
+     </div>
+     <div style="margin-top: 30px;">       
+       <table class="admin">
+       	 <tr>
+       	   <th colspan="2" class="h2">Telefon</th>
+       	 </tr>
+  	     <tr>
+  	       <td><%= @school.PHONE %></td>
+  	       <td><img src="/assets/phone.png" width="125" height="100" title="" alt="" /></td>	
   	     </tr>
        </table>
      </div>    	

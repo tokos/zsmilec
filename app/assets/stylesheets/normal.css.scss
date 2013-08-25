@@ -106,12 +106,8 @@ td.admin
 
 a
 {
-  text-decoration: none;  
-}
-
-a:link
-{
-  color: blue;
+  text-decoration: none;
+  color: #000000;  
 }
 
 table.admin td, th
@@ -290,9 +286,66 @@ div.subject
   top: 22%; 
   left: 62%; 
   background-color: #E8E8E8;
+  border: 1px solid #606060;
   color: #000000;
   font-family: Verdana;
   font-size: x-small;
   padding: 10px; 
   display: none;
+}
+
+hr.fancy-line { 
+    border: 0; 
+    height: 1px; 
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(40,40,40,0.75), rgba(0,0,0,0)); 
+    background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(40,40,40,0.75), rgba(0,0,0,0)); 
+    background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(40,40,40,0.75), rgba(0,0,0,0)); 
+    background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(40,40,40,0.75), rgba(0,0,0,0)); 
+    box-shadow: 0px -2px 6px rgba(136,136,136,0.75);
+    margin-top: 2px;
+}
+
+a.bookmark, a.bookmark:link, a.bookmark:visited, a.bookmark:active
+{
+  color: #000000;
+  text-decoration: none;
+  border: 1px solid #E0E0E0;
+  font-family: Verdana;
+}
+
+a.bookmark:hover
+{
+  color: #000000;
+  background-color: #E8E8E8;
+  border: 1px solid #606060;
+  font-family: Verdana; 
+}
+
+a.bookmark-marked, a.bookmark-marked:link, a.bookmark-marked:active, a.bookmark-marked:visited, a.bookmark-marked:hover
+{
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #282828;
+  border: 1px solid #282828;
+  font-family: Verdana;
+}
+
+th.h2  
+{ 
+  color: #999;  
+  text-align: left;
+  border: none;
+  background-color: #FFFFFF;
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+
+td.h2  
+{ 
+  color: #999;  
+  text-align: left;
+  border: none;
+  background-color: #FFFFFF;
+  font-size: 18px;
+  padding-bottom: 10px;
 }
