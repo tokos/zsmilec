@@ -1,4 +1,4 @@
-<table class="admin" style="font-size: x-small;">
+<table class="admin">
   <tr>
   	<th>Pozice</th>
   	<th>Zaměstnanec</th>
@@ -12,10 +12,9 @@
   </tr>
   <% @employees.each do |employee| %>
     <tr>
-      <td><%= employee.POSITION %></td>
+      <td class="empl" style="border-bottom: 1px solid #C8C8C8;"><%= employee.POSITION %></td>
       <% name = employee.DEGREE+' '+employee.FIRST_NAME+' '+employee.LAST_NAME %>	
-      <!--<td><%= link_to name, '/n_employees/'+employee.ID.to_s, :class => 'empl' %></td>-->      
-      <td><%= link_to name, { :action => 'show_employee', :id => employee.ID, :remote => true }, :class => 'empl' %></td>
+      <td style="border-bottom: 1px solid #C8C8C8; width: 180px;"><%= link_to name, { :action => 'show_employee', :id => employee.ID, :remote => true }, :class => 'bookmark-nob' %></td>
     </tr>
   <% end %>
 </table>

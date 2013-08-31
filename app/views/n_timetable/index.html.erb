@@ -9,9 +9,9 @@
   		<table class="admin">  	
     	<% @timetables.each do |timetable| %>
       	  <tr>
-      	    <td>
+      	    <td class="empl">
       	      <% t = timetable.NAME + '(' + timetable.YEAR + ')' %>	
-		      <%= link_to t, '/n_timetable/'+timetable.ID.to_s, :action => 'show', :title => 'Ukázat', :remote => true %>      		
+		      <%= link_to t, '/n_timetable/'+timetable.ID.to_s, :action => 'show', :title => 'Ukázat', :remote => true, :class => 'bookmark' %>      		
       	    </td>
           </tr>
         <% end %>
