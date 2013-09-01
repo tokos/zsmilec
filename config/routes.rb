@@ -80,6 +80,10 @@ RailsinstallerDemo::Application.routes.draw do
   match 'show' => 'n_timetable#show'
   
   #match 'n_employees/show?' => 'n_employees#show'
+  
+  # events / actions
+  
+  match 'n_actions' => 'n_actions#index'
 
 
   # The priority is based upon order of creation:

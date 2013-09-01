@@ -1,0 +1,11 @@
+<table class="admin">
+<% @events.each do |event| %>
+  <tr>  	
+    <td onmouseover="$(this).find('#title').show()" onmouseout="$(this).find('#title').hide()">
+      <%=event.EVENT_DATE.strftime("%d.%m.%Y") %> <%=event.EVENT_TIME.strftime("%H:%M") %> 
+      <%=link_to event.TEXT, '#', :class => 'bookmark' %>
+      <span id="title" class="title">To bude velka show</span>        
+    </td>    
+  </tr>  
+<% end %>
+</table>
