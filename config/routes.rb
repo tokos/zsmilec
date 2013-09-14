@@ -40,6 +40,8 @@ RailsinstallerDemo::Application.routes.draw do
   
   resources :results
   
+  resources :holidays  
+  
   # **************************************************************
   # NORMAL VIEWS
   # **************************************************************
@@ -84,6 +86,14 @@ RailsinstallerDemo::Application.routes.draw do
   # events / actions
   
   match 'n_actions' => 'n_actions#index'
+  
+  match 'n_actions/action' => 'n_actions#action'
+  
+  match 'n_actions/holiday' => 'n_actions#holiday'
+  
+  match 'action' => 'n_actions#action'
+  
+  match 'holiday' => 'n_actions#holiday'
 
 
   # The priority is based upon order of creation:

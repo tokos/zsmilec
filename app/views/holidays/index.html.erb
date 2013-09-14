@@ -1,0 +1,26 @@
+<h1 class="table">Prázdniny</h1>
+
+<table>
+  <tr>
+  	<th>Prázdniny</th>
+    <th>Začátek prázdnin</th>
+    <th>Konec prázdnin</th>    
+  </tr>
+
+<% @holidays.each do |holiday| %>
+  <tr>
+  	<td><%=h holiday.NAME %></td>
+  	<td><%=h holiday.DATE_FROM.strftime("%d.%m.%Y") %></td>
+  	<td><%=h holiday.DATE_TO.strftime("%d.%m.%Y") %></td>
+    <td><%= link_to 'Ukázat', holiday %></td>
+    <td><%= link_to 'Upravit', edit_holiday_path(holiday) %></td>
+    <td><%= link_to 'Smazat', holiday, method: :delete, data: { confirm: 'Jste si jisti?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Vložit prázdniny', new_holiday_path %>
+<br />
+<a class="button" href="admin"><image src="assets/go-back-icon.png" height="26" width="26" title="Zpět do hlavního menu" /></a>

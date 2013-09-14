@@ -1,0 +1,31 @@
+<%= form_for(@holiday) do |f| %>
+
+  <table>
+    <tr>
+  	  <th>Prázdniny</th>
+      <th>Začátek prázdnin</th>
+      <th>Konec prázdnin</th>  	  
+    </tr>
+    <tr>
+      <td><%= f.text_field :NAME %></td>
+      <td><%= f.text_field :DATE_FROM, :class => 'datepicker' %></td>	
+      <td><%= f.text_field :DATE_TO, :class => 'datepicker' %></td>
+    </tr>    
+  </table>
+
+  <% if @holiday.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@holiday.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @holiday.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Uložit" %>
+  </div>
+<% end %>

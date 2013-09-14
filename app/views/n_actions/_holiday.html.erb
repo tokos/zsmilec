@@ -1,0 +1,13 @@
+<hr class="fancy-line" />
+<div style="margin-top: 30px; margin-left: 30px;">
+<table class="admin">
+<% @holidays.each do |holiday| %>
+  <tr>
+  	<td class="empl" style="width: 100px;"><%=holiday.NAME %></td>  
+  	<td style="background-color: #E0E0E0;"><%=holiday.DATE_FROM.strftime("%d.%m.%Y") %></td>
+  	<td>-</td>
+  	<td style="background-color: #E0E0E0;"><%=holiday.DATE_TO.strftime("%d.%m.%Y") %></td>
+  </tr>	
+<% end %>
+</table>
+</div>

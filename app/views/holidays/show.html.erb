@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+  	<% Holiday.column_names.each do |column_name| %>
+  	<th><%=h column_name %></th>
+  	<% end %>
+  </tr>
+  <tr>
+  <% Holiday.column_names.each do |column_name| %>
+  	<% if column_name == "DATE_FROM" %>
+  	  <td><%=h @holiday[column_name].strftime("%d.%m.%Y") %></td>
+  	<% elsif column_name == "DATE_TO" %>
+  	  <td><%=h @holiday[column_name].strftime("%d.%m.%Y") %></td>
+  	<% else %>
+  	  <td><%=h @holiday[column_name] %></td>  
+  	<% end %>
+  <% end %>  	
+  </tr>
+</table>
+
+<%= link_to 'Upravit', edit_holiday_path(@holiday) %> |
+<%= link_to 'Zpět', holidays_path %>

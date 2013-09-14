@@ -4,19 +4,25 @@
     <tr>
   	  <th>Datum zveřejnění/konání</th>
   	  <th>Čas zveřejnění/konání</th>
-  	  <th>Obsah</th>
-  	  <th>Typ události</th>
+  	  <th>Text</th>  	  
     </tr>
     <tr>
-      <% if @event.EVENT_DATE == nil %>	
-        <td><%= f.text_field :EVENT_DATE %></td>
+      <% if @event.EVENT_DATE == nil %>
+        <td><%= f.text_field :EVENT_DATE, :class => 'datepicker' %></td>	        
         <td><%= f.text_field :EVENT_TIME %></td>
       <% else %>  
-  	    <td><%= f.text_field :EVENT_DATE, :value => @event.EVENT_DATE.strftime("%d.%m.%Y") %></td>
+  	    <td><%= f.text_field :EVENT_DATE, :value => @event.EVENT_DATE.strftime("%d.%m.%Y"), :class => 'datepicker' %></td>
   	    <td><%= f.text_field :EVENT_TIME, :value => @event.EVENT_TIME.strftime("%H:%M") %></td>
   	  <% end %>
-  	  <td><%= f.text_field :TEXT %></td>
-  	  <td><%= f.select(:TYPE, options_for_select({"Aktualita" => "ACT", "Akce harmonogramu" =>"EVT"}, @event.TYPE)) %></td>
+  	  <td><%= f.text_field :TEXT %></td>  	  
+    </tr>
+    <tr>
+      <th>Bližší popis</th>
+  	  <th>Typ události</th>	
+    </tr>
+    <tr>
+      <td><%= f.text_area :DESCRIPTION, :size => "20x6" %></td>
+  	  <td><%= f.select(:TYPE, options_for_select({"Aktualita" => "ACT", "Akce harmonogramu" =>"EVT"}, @event.TYPE)) %></td>	
     </tr>
   </table>
 
