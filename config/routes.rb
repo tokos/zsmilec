@@ -94,7 +94,10 @@ RailsinstallerDemo::Application.routes.draw do
   match 'action' => 'n_actions#action'
   
   match 'holiday' => 'n_actions#holiday'
-
+  
+  match 'n_actions/monthly' => 'n_actions#monthly' 
+  
+  match 'monthly' => 'n_actions#monthly'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

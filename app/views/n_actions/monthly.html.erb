@@ -1,5 +1,8 @@
-<!--<hr class="fancy-line" />-->
-<div style="margin-top: 10px;">
+<%= link_to 'Akce', '/n_actions/action', :action => 'action', :title => '', :id => 'action', :remote => true, :class => 'bookmark-marked' %>
+<%= link_to 'Prázdniny', '/n_actions/holiday', :action => 'holiday', :title => '', :remote => true, :class => 'bookmark', :id => 'holiday' %>
+<hr class="fancy-line" />
+<div id="target">	
+<div style="margin-top: 10px;">	
   <%= form_for(@object, :url => url_for(:controller => 'n_actions', :action => 'monthly'), :remote => true) do |f| %>
     Pouze aktuální měsíc <%= f.check_box :monthly, :onchange => 'this.form.submit()' %> 
   <% end %>	
@@ -15,5 +18,6 @@
     </td>    
   </tr>  
 <% end %>
-</table>
+</table>	
+</div>
 </div>
