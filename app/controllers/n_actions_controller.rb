@@ -13,7 +13,7 @@ class NActionsController < ApplicationController
     
     actual_date = Date.today
     Event.all.each do |event|      
-      if event.EVENT_DATE.mon == actual_date.mon
+      if event.EVENT_DATE.mon == actual_date.mon && event.EVENT_DATE.year == actual_date.year
         @events.push(event)
       end
     end
@@ -51,12 +51,17 @@ class NActionsController < ApplicationController
     if params[:monthly][:monthly].to_s == '1'
       actual_date = Date.today
       Event.all.each do |event|
-        if event.EVENT_DATE.mon == actual_date.mon
+        if event.EVENT_DATE.mon == actual_date.mon && event.EVENT_DATE.year == actual_date.year
           @events.push(event)
         end
       end
     else
-      @events = Event.all
+      @events = Array.new
+      Event.all.each do |event|
+        if event.EVENT_DATE.year == Date.today.year
+          @events.push(event);
+        end
+      end
     end    
 
     @object.monthly = params[:monthly][:monthly]
