@@ -98,6 +98,12 @@ RailsinstallerDemo::Application.routes.draw do
   match 'n_actions/monthly' => 'n_actions#monthly' 
   
   match 'monthly' => 'n_actions#monthly'
+  
+  # documents
+  
+  match 'n_documents' => 'n_documents#index'
+  
+  match 'assets/documents/SVP.doc' => 'n_documents#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
