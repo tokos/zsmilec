@@ -104,6 +104,14 @@ RailsinstallerDemo::Application.routes.draw do
   match 'n_documents' => 'n_documents#index'
   
   match 'assets/documents/SVP.doc' => 'n_documents#show'
+  
+  # rooms
+  
+  match 'n_rooms' => 'n_rooms#index'
+  
+  match 'n_rooms/ict' => 'n_rooms#ict'
+  
+  match 'n_rooms/classroom' => 'n_rooms#classroom'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

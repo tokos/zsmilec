@@ -1,0 +1,19 @@
+var largeImage = document.getElementById('classroom1');
+largeImage.style.width=800+"px";
+largeImage.style.height=140+"px"; 
+var url=largeImage.getAttribute('src');    
+
+var newImg = window.open(url,"Image", "width=800,height=650,resizable=1")
+newImg.document.write("<title>Třída</title>")
+newImg.document.write("<script type='text/javascript'>")
+newImg.document.write("var index = 1;")
+newImg.document.write("function previous() { index = index-1; if(index>0) { document.getElementsByTagName('img')[0].setAttribute('src', '/assets/rooms/trida'+index+'.JPG'); } else { index=index+1; } if(index==1) { document.getElementsByTagName('img')[0].setAttribute('width', 800); document.getElementsByTagName('img')[0].setAttribute('height', 140);} if(index==2) { document.getElementsByTagName('img')[0].setAttribute('width', 800); document.getElementsByTagName('img')[0].setAttribute('height', 256);} if(index==3) { document.getElementsByTagName('img')[0].setAttribute('width', 800); document.getElementsByTagName('img')[0].setAttribute('height', 600);} }")
+newImg.document.write("function next() { index = index+1; if(index<=3) { document.getElementsByTagName('img')[0].setAttribute('src', '/assets/rooms/trida'+index+'.JPG'); } else { index=index-1; } if(index==1) { document.getElementsByTagName('img')[0].setAttribute('width', 800); document.getElementsByTagName('img')[0].setAttribute('height', 140);} if(index==2) { document.getElementsByTagName('img')[0].setAttribute('width', 800); document.getElementsByTagName('img')[0].setAttribute('height', 256);} if(index==3) { document.getElementsByTagName('img')[0].setAttribute('width', 800); document.getElementsByTagName('img')[0].setAttribute('height', 600);} }")
+newImg.document.write("</script>")
+newImg.document.write("<div style='text-align: center;'>")
+newImg.document.write("<button onclick='previous(); return false;'>&lt;&lt;</button>")
+newImg.document.write("<button onclick='next(); return false;'>&gt;&gt;</button>")
+newImg.document.write("</div>")
+newImg.document.write("<img src='"+ url +"' height='"+ largeImage.style.height +"' width='"+ largeImage.style.width +"' onclick='window.close()' style='position:relative;left:0;top:10'>")
+newImg.document.write("<script type='text/javascript'> document.oncontextmenu = new Function(\"return false\") </sc"+"ript>")
+newImg.document.close()
