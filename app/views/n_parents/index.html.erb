@@ -1,0 +1,30 @@
+<%= link_to 'Procvičujeme doma', '/n_parents', :action => 'training', :title => '', :id => 'training', :remote => true, :class => 'bookmark-marked' %>
+<div id="target">
+<hr class="fancy-line" />
+<div style="margin-left: 30px; margin-top: 30px;">
+  <h2>Informace pro rodiče</h2>
+  <div>
+  	<p class="text">
+  	Co můžete procvičovat doma? Čtení pomocí čtecích tabulek (bližší info tř. schůzky) k odbourávání dvojího čtení. 
+  	U psaní se dozvíte co se kdy trénuje. Další materiály (např. různé pomůcky pro matematiku) najdete v sekci <%= link_to 'Žáci', '/n_pupils', :class => 'bookmark' %>. 	
+  	</p>
+  </div>  
+  <ul>
+  	<li>Čtení (čtecí tabulky)</li>
+  	<ul style="margin-left: 30px;"> 
+  	  <li><%= link_to 'Tabulky 1', '/resource/parents/tabulky1.doc', :class => 'bookmark' %></li>
+  	  <li><%= link_to 'Tabulky 2', '/resource/parents/tabulky2.doc', :class => 'bookmark' %></li>
+  	  <li><%= link_to 'Tabulky 3', '/resource/parents/tabulky3.doc', :class => 'bookmark' %></li>	 	  	
+  	</ul>
+  	<li>Psaní</li>  		
+  	<ul style="margin-left: 30px;">
+  	  <li><%= link_to 'Psaní', '/resource/parents/Psani2.odt', :class => 'bookmark' %></li>	
+  	</ul>  	  
+  </ul>
+  <div style="margin-left: 5%; margin-top: 20px; font-size: x-small;">
+  	<img src="/assets/doc.jpg" width="54" height="55" alt="" />
+  	<img src="/assets/oodoc.jpg" width="48" height="48" alt="" />
+  	Kompatibilní s MS Word a Open Office
+  </div> 	  
+</div>
+</div>  

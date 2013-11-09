@@ -112,6 +112,14 @@ RailsinstallerDemo::Application.routes.draw do
   match 'n_rooms/ict' => 'n_rooms#ict'
   
   match 'n_rooms/classroom' => 'n_rooms#classroom'
+  
+  # parents
+  
+  match 'n_parents' => 'n_parents#index'
+  
+  # pupils
+  
+  match 'n_pupils' => 'n_pupils#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
