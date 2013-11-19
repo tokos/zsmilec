@@ -23,15 +23,15 @@
            <th colspan="2" class="h2">Adresa</th>	
          </tr>	       	 
   	     <tr>
-           <td style="vertical-align: bottom;"><%= @school.NAME %></td>
+           <td style="vertical-align: bottom;"><span class="highlight"><%= @school.NAME %></span></td>
            <td rowspan="2"><img src="/assets/envelope.png" width="173" height="101" title="" alt="" /></td>
   	     </tr>	
   	     <tr>
-  	       <td style="vertical-align: top;"><%= @school.ADDRESS %></td>
+  	       <td style="vertical-align: top;"><span class="highlight"><%= @school.ADDRESS %></span></td>
   	     </tr>
   	     <tr>
-  	       <td class="h2">Email:</td>	
-  	       <td><%= @school.EMAIL %></td>
+  	       <th class="h2">Email:</th>	  	       
+  	       <td colspan="2"><span class="highlight"><%= @school.EMAIL %></span></td>
   	     </tr>
        </table>       
      </div>

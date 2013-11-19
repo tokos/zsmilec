@@ -61,11 +61,15 @@ RailsinstallerDemo::Application.routes.draw do
   
   match 'n_school/map' => 'n_school#map'
   
+  match 'n_school/teaching' => 'n_school#teaching'
+  
   match 'map' => 'n_school#map'
   
   match 'history' => 'n_school#history'
   
   match 'contact' => 'n_school#contact'
+  
+  match 'teaching' => 'n_school#teaching'
   
   # employees  
   
