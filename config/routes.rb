@@ -1,6 +1,12 @@
 RailsinstallerDemo::Application.routes.draw do
 
   # **************
+  # HOME
+  # **************
+  
+  root :to => 'n_school#index'
+
+  # **************
   # ADMIN section
   # **************
 
