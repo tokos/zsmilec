@@ -22,15 +22,36 @@
   	  <td><%= day.NAME %></td>
   	  <% Hour.where(:DAY_ID => day.ID).order(:POSITION).each do |hour| %>
   	    <% if hour.SUBJECT_ID != nil %>
-  	      <% subject = Subject.find(hour.SUBJECT_ID) %>
-  	      <td onmouseover="$(this).find('div').show()" onmouseout="$(this).find('div').hide()" style="cursor: pointer;">
+  	      <% subject = Subject.find(hour.SUBJECT_ID) %>  	      
+  	      	
+  	      	<%
+			if(hour.NOTE != nil && hour.NOTE != '')
+			%>			  
+			<td onmouseover="$(this).find('div').show()" onmouseout="$(this).find('div').hide()" style="cursor: pointer; background-color: #CCFF33;">
   	      	<%= subject.SHORT_NAME %>
-  	      	<div class="subject">
-			  Předmět: <%= subject.NAME %>			  
-			  <br />  	      	  
-			  Vyučuje: <%= teachers[subject.ID] %>
-  	      	</div>
-  	      </td>
+			  <div class="subject" style="background-color: #CCFF33;">
+			    Předmět: <%= subject.NAME %>			  		  
+			    <br />
+			    (<%= hour.NOTE %>)			  
+			    <br />
+			    Vyučuje: <%= teachers[subject.ID] %>
+  	      	  </div>
+  	      	</td>  			
+			<%
+			else
+			%>
+			<td onmouseover="$(this).find('div').show()" onmouseout="$(this).find('div').hide()" style="cursor: pointer;">
+  	      	<%= subject.SHORT_NAME %>	
+			  <div class="subject">
+			    Předmět: <%= subject.NAME %>			  		  			  			  
+			    <br />
+			    Vyučuje: <%= teachers[subject.ID] %>
+  	      	  </div>
+  	      	</td>  
+  	      	<%  	
+			end
+			%>
+  	      	  	        	      
   	    <% else %>
   	      <td></td>
   	    <% end %>    
