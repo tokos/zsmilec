@@ -4,6 +4,8 @@ class PupilsController < ApplicationController
   
   layout "admin"
   
+  before_filter :authenticate, :except => [:index, :show]
+  
   # GET /pupils
   # GET /pupils.json
   def index

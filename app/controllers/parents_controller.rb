@@ -4,6 +4,8 @@ class ParentsController < ApplicationController
   
   layout "admin"
   
+  before_filter :authenticate, :except => [:index, :show]
+  
   # GET /parents
   # GET /parents.json
   def index

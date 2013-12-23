@@ -4,6 +4,8 @@ class TasksController < ApplicationController
   
   layout "admin"
   
+  before_filter :authenticate, :except => [:index, :show]
+  
   # GET /tasks
   # GET /tasks.json
   def index

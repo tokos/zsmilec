@@ -4,6 +4,8 @@ class CouncilsController < ApplicationController
   
   layout "admin"
   
+  before_filter :authenticate, :except => [:index, :show]
+  
   # GET /councils
   # GET /councils.json
   def index

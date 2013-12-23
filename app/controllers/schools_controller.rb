@@ -4,8 +4,7 @@ class SchoolsController < ApplicationController
   
   layout "admin"
   
-  #TODO login before filter
-  #---------------------------------------------------------------------
+  before_filter :authenticate, :except => [:index, :show]
   
   # GET /schools
   # GET /schools.json

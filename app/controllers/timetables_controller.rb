@@ -4,6 +4,8 @@ class TimetablesController < ApplicationController
   
   layout "admin"
   
+  before_filter :authenticate, :except => [:index, :show]
+  
   def import
     t = TimetableImport.new
     begin    

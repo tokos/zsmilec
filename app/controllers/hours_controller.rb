@@ -4,6 +4,8 @@ class HoursController < ApplicationController
   
   layout "admin"
   
+  before_filter :authenticate, :except => [:index, :show]
+  
   #POST /hours/select_timetable
   def select_timetable
     redirect_to :action => "index", :t => params[:timetable], :d => params[:day]

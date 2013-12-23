@@ -4,8 +4,7 @@ class EventsController < ApplicationController
   
   layout "admin"
   
-  #TODO login before filter
-  #---------------------------------------------------------------------
+  before_filter :authenticate, :except => [:index, :show]  
   
   # GET /events
   # GET /events.json

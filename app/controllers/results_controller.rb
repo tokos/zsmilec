@@ -4,6 +4,8 @@ class ResultsController < ApplicationController
   
   layout "admin"
   
+  before_filter :authenticate, :except => [:index, :show]
+  
   # GET /results
   # GET /results.json
   def index

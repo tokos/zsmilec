@@ -4,6 +4,8 @@ class DaysController < ApplicationController
   
   layout "admin"
   
+  before_filter :authenticate, :except => [:index, :show]
+  
   # POST /days/select_timetable  
   def select_timetable
     if params[:timetable] == nil or params[:timetable] == ""

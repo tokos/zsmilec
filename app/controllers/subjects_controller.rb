@@ -4,6 +4,8 @@ class SubjectsController < ApplicationController
   
   layout "admin"
   
+  before_filter :authenticate, :except => [:index, :show]
+  
   # GET /subjects
   # GET /subjects.json
   def index
