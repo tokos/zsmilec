@@ -4,19 +4,12 @@ class NActionsController < ApplicationController
   
   layout "application"
   
-  def index    
-    
-    @events = Array.new    
+  def index               
     
     @object = Monthly.new
     @object.monthly = false
     
-    actual_date = Date.today
-    Event.all.each do |event|      
-      if event.EVENT_DATE.year == actual_date.year
-        @events.push(event)
-      end
-    end
+    @events = Event.all
     
     respond_to do |format|
       format.html # index.html.erb      
