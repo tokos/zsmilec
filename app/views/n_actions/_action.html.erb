@@ -1,9 +1,4 @@
 <!--<hr class="fancy-line" />-->
-<div style="margin-top: 10px;">
-  <%= form_for(@object, :url => url_for(:controller => 'n_actions', :action => 'monthly'), :remote => true) do |f| %>
-    Pouze aktuální měsíc <%= f.check_box :monthly, :onchange => 'this.form.submit()' %> 
-  <% end %>	
-</div>
 <div style="margin-top: 30px; margin-left: 30px;">	
 <table class="admin">
 <% @events.each do |event| %>

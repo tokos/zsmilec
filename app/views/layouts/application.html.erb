@@ -15,8 +15,9 @@
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="/assets/jquery.ui.datepicker-cs.js"></script>
   <script src="/assets/sliding_effect.js"></script>
-  <script>  
-    $(function() {      
+  <script>              
+    $(function() {    	      	
+    	      
       $(".datepicker").datepicker({ dateFormat: "dd.mm.yy" }, $.datepicker.regional['cs'] = {
                 closeText: 'Cerrar',
                 prevText: 'Předchozí',
@@ -32,11 +33,12 @@
                 firstDay: 1,
                 isRTL: false,
                 showMonthAfterYear: false,
-                yearSuffix: ''});
+                yearSuffix: ''} );                                       	         
                 
-       $.datepicker.setDefaults($.datepicker.regional['cs']);                            
+       $.datepicker.setDefaults($.datepicker.regional['cs']);
+                                   
     });
-  </script>
+  </script>       	 
   <link rel="shortcut icon" href="/assets/favicon.ico">
   <!--<link href="/assets/favicon.ico" rel="icon" type="image/ico" />-->
   <%= javascript_include_tag :defaults %>
