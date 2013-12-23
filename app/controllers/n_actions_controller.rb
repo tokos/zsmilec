@@ -9,11 +9,11 @@ class NActionsController < ApplicationController
     @events = Array.new    
     
     @object = Monthly.new
-    @object.monthly = true
+    @object.monthly = false
     
     actual_date = Date.today
     Event.all.each do |event|      
-      if event.EVENT_DATE.mon == actual_date.mon && event.EVENT_DATE.year == actual_date.year
+      if event.EVENT_DATE.year == actual_date.year
         @events.push(event)
       end
     end
@@ -41,35 +41,6 @@ class NActionsController < ApplicationController
     respond_to do | format |  
         format.js {render :layout => false}  
     end
-  end
-  
-  def monthly
-    
-    @events = Array.new
-    @object = Monthly.new
-    
-    if params[:monthly][:monthly].to_s == '1'
-      actual_date = Date.today
-      Event.all.each do |event|
-        if event.EVENT_DATE.mon == actual_date.mon && event.EVENT_DATE.year == actual_date.year
-          @events.push(event)
-        end
-      end
-    else
-      @events = Array.new
-      Event.all.each do |event|
-        if event.EVENT_DATE.year == Date.today.year
-          @events.push(event);
-        end
-      end
-    end    
-
-    @object.monthly = params[:monthly][:monthly]
-
-    respond_to do |format|
-      format.html # monthly.html.erb      
-    end  
-
   end
   
 end
