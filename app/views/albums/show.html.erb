@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+  	<% Album.column_names.each do |column_name| %>
+  	<th><%=h column_name %></th>
+  	<% end %>
+  </tr>
+  <tr>
+  <% Album.column_names.each do |column_name| %>
+    <% if column_name == 'image' %>
+      <td><%= image_tag @album.image_url(:thumb).to_s %></td>
+    <% else %>  
+      <td><%=h @album[column_name] %></td>
+    <% end %>  	
+  <% end %>  	
+  </tr>
+</table>
+
+<%= link_to 'Upravit', edit_album_path(@album) %> |
+<%= link_to 'Zpět', albums_path %>

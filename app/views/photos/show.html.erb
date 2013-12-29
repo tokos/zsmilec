@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+  	<% Photo.column_names.each do |column_name| %>
+  	<th><%=h column_name %></th>
+  	<% end %>
+  </tr>
+  <tr>
+  <% Photo.column_names.each do |column_name| %>
+    <% if column_name == 'image' %>
+      <td><%= image_tag @photo.image_url(:thumb).to_s %></td>
+    <% else %>  
+      <td><%=h @photo[column_name] %></td>
+    <% end %>  	
+  <% end %>  	
+  </tr>
+</table>
+
+<%= link_to 'Upravit', edit_photo_path(@photo) %> |
+<%= link_to 'Zpět', photos_path %>

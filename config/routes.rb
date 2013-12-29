@@ -48,6 +48,12 @@ RailsinstallerDemo::Application.routes.draw do
   
   resources :holidays  
   
+  resources :albums
+  
+  resources :photos
+  
+  match 'photos/new/:id' => 'photos#new'
+  
   # **************************************************************
   # NORMAL VIEWS
   # **************************************************************

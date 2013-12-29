@@ -1,0 +1,24 @@
+<h1 class="table">Fotoalba</h1>
+
+<table>
+  <tr>
+    <th>Název</th>
+    <th>Popis</th>        
+  </tr>
+
+<% @albums.each do |album| %>
+  <tr>
+  	<td><%=h album.TITLE %></td>
+  	<td><%=h album.DESCRIPTION %></td>
+  	<td><%= link_to 'Ukázat', album %></td>
+    <td><%= link_to 'Upravit', edit_album_path(album) %></td>
+    <td><%= link_to 'Smazat', album, method: :delete, data: { confirm: 'Jste si jistí?' } %></td>  	
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nové fotoalbum', new_album_path %>
+<br />
+<a class="button" href="admin"><image src="assets/go-back-icon.png" height="26" width="26" title="Zpět do hlavního menu" /></a>

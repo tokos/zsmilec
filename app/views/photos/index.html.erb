@@ -1,0 +1,26 @@
+<h1 class="table">Fotografie</h1>
+
+<table>
+  <tr>
+    <th>Popis</th>
+    <th>Album</th>        
+    <th>Foto</th>
+  </tr>
+
+<% @photos.each do |photo| %>
+  <tr>
+  	<td><%=h photo.DESCRIPTION %></td>
+  	<td><%=h Album.find(photo.ALBUM_ID).TITLE %></td>
+  	<td><%= image_tag photo.image_url(:thumb).to_s %></td>
+  	<td><%= link_to 'Ukázat', photo %></td>
+    <td><%= link_to 'Upravit', edit_photo_path(photo) %></td>
+    <td><%= link_to 'Smazat', photo, method: :delete, data: { confirm: 'Jste si jistí?' } %></td>  	
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nová fotografie', new_photo_path %>
+<br />
+<a class="button" href="admin"><image src="assets/go-back-icon.png" height="26" width="26" title="Zpět do hlavního menu" /></a>

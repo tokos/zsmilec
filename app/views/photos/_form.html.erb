@@ -1,0 +1,33 @@
+<%= form_for @photo, html: { multipart: true } do |f| %>
+
+  <table>
+  	<tr>
+  	  <th>Popis</th>
+  	  <td><%= f.text_field :DESCRIPTION %></td>
+  	</tr>
+    <tr>
+  	  <th>Album</th>
+  	  <td><%= f.select :ALBUM_ID, options_for_select(@albums_map, @photo.ALBUM_ID) %></td>
+  	</tr>  	
+    <tr>
+      <th>foto</th>
+      <td><%= f.file_field :image %></td>	
+    </tr>   
+  </table>
+
+  <% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+      <ul>
+      <% @photo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Uložit" %>
+  </div>
+<% end %>
