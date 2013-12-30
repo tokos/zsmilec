@@ -10,6 +10,8 @@
   <% Photo.column_names.each do |column_name| %>
     <% if column_name == 'image' %>
       <td><%= image_tag @photo.image_url(:thumb).to_s %></td>
+    <% elsif column_name == 'ALBUM_ID' %>
+      <td><%= Album.find(@photo[column_name]).TITLE.to_s %></td>  
     <% else %>  
       <td><%=h @photo[column_name] %></td>
     <% end %>  	

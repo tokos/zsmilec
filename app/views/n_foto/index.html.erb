@@ -1,0 +1,43 @@
+<h2>Fotoalba</h2>
+<hr class="fancy-line" />
+<table class="admin" style="text-align: center;">
+  <% if @albums == nil || @albums.empty? %>
+	<tr>
+		<td>Zatím nejsou zveřejněna žádná fotoalba</td>
+	</tr>
+	<% else
+	  index = 0 
+	%>
+	  <% @albums.each do |album| %>
+	  <% 
+	  index = index + 1
+	  if index.even? %>
+	    <tr onmouseover="this.className = 'marked'" onmouseout="this.className = 'unmarked'" onclick="window.location = '/n_foto/show/<%= album.ID %>'">		  
+		  <td><h2 class="black"><%= album.TITLE %></h2></td>
+		  <td rowspan="2" style="border-left: 2px groove #000000;"><%= image_tag album.image_url(:thumb).to_s %></td>
+	    </tr>
+	    <tr>
+		  <td><p class="photo"><%= album.DESCRIPTION %></p></td>		
+	    </tr>
+	    <tr>
+		  <td colspan="2">
+		  <hr class="fancy-line" />
+		  </td>
+	    </tr>
+	  <% else %>
+	    <tr onmouseover="this.className = 'marked'" onmouseout="this.className = 'unmarked'" onclick="window.location = '/n_foto/show/<%= album.ID %>'">
+		  <td rowspan="2" style="border-right: 2px ridge #000000;"><%= image_tag album.image_url(:thumb).to_s %></td>
+		  <td><h2 class="black"><%= album.TITLE %></h2></td>
+	    </tr>
+	    <tr>
+		  <td><p class="photo"><%= album.DESCRIPTION %></p></td>		
+	    </tr>
+	    <tr>
+		  <td colspan="2">
+		  <hr class="fancy-line" />
+		  </td>
+	    </tr>	    	    	    
+	  <% end %>	  
+	<% end %>
+  <% end %>
+</table>	

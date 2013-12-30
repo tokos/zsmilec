@@ -9,7 +9,7 @@
   <tr>
   <% Album.column_names.each do |column_name| %>
     <% if column_name == 'image' %>
-      <td><%= image_tag @album.image_url(:thumb).to_s %></td>
+      <td><%= image_tag @album.image_url(:thumb).to_s %></td>      
     <% else %>  
       <td><%=h @album[column_name] %></td>
     <% end %>  	

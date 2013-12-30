@@ -1,0 +1,31 @@
+<h2 class="black" style="display: inline; margin-bottom: 5px;"><%= @album.TITLE %></h2>
+<div style="text-align: right;">
+  <%= link_to '<<', '/n_foto', :class => 'back', :title => 'Zpět na alba' %>	
+</div>	
+<hr class="fancy-line" />	
+<p class="photo"><%= @album.DESCRIPTION %></p>
+<% @photos.each do |photo| %>
+  <div class="target">
+  	<%= image_tag photo.image_url().to_s, :id => 'target_'+photo.ID.to_s %>  	
+  </div>	
+<% end %>
+<table>
+  <tr>	
+  <% index = 0 %>		
+  <% @photos.each do |photo|
+  	index = index + 1 
+  	if index == 5
+  	  %>
+  	  </tr><tr>
+  	  <%	
+  	  index = 0	
+  	end	
+  	url = photo.image_url(:thumb).to_s  	
+  %>
+    <td>
+      <%= link_to(image_tag(url, :title => photo.DESCRIPTION, :class => 'photo'), "/n_foto/show_big/"+photo.ID.to_s, :remote => true, :class => 'photo') %>
+    </td>      
+  <% end %>	  	
+  </tr>	
+</table>
+<%= link_to '<<', '/n_foto', :class => 'back', :title => 'Zpět na alba' %>	

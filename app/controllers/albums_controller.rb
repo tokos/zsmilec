@@ -58,7 +58,7 @@ class AlbumsController < ApplicationController
         format.json { render json: @album.errors, status: :unprocessable_entity }
       end
     end
-  end
+  end     
 
   # PUT /albums/1
   # PUT /albums/1.json

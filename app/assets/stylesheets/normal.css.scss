@@ -405,3 +405,86 @@ span.highlight
   background-color: #E8E8E8;
   font-size: normal;
 }
+
+h2.black  
+{ 
+  color: #000000;
+  margin-bottom: 0px;;
+  padding-bottom: 2px; 
+  margin-left: 10px;
+  /*background:url(navigation.jpg) no-repeat;*/
+  font-family: Verdana;
+  font-size: medium;
+  font-style: italic;
+  text-shadow: 1px 1px 3px #FFFFFF, -1px -1px 3px #000000, 1px 1px #FFFFFF, -1px -1px #000000;
+}
+
+p.photo
+{  
+  font-family: Verdana;
+  font-size: small;
+  font-style: italic;
+  color: #000000;
+  font-weight: normal;
+  text-shadow: none; 
+}
+
+tr.marked
+{      
+  cursor: pointer;
+  background-color: #E8E8E8;
+  text-decoration: underline;    
+}
+
+tr.unmarked
+{
+  cursor: pointer;
+  background-color: #FFFFFF;
+  text-decoration: none;
+}
+
+a.back, a.back:visited, a.back:link
+{
+  font-family: Verdana;
+  font-size: x-small;
+  font-weight: normal;
+  text-shadow: none;
+  color: #000000;
+  background-color: #FFFFFF;
+  text-decoration: none;
+}
+
+a.back:hover
+{
+  border: 1px solid #000000;
+  font-family: Verdana;
+  font-size: x-small;
+  color: #000000;
+  background-color: #E8E8E8;
+  text-decoration: none;
+  font-weight: normal;
+  text-shadow: none;
+}
+
+img.photo
+{
+  text-decoration: none;  
+}
+
+a.photo, a.photo:link, a.photo:visited
+{
+  text-decoration: none;
+  border: none;
+}
+
+a.photo:hover
+{
+  text-decoration: none;
+  border: none;
+  background-color: #FFFFFF;
+}
+
+div.target
+{
+  display: none;
+}

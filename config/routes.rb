@@ -48,7 +48,7 @@ RailsinstallerDemo::Application.routes.draw do
   
   resources :holidays  
   
-  resources :albums
+  resources :albums    
   
   resources :photos
   
@@ -132,6 +132,14 @@ RailsinstallerDemo::Application.routes.draw do
   # pupils
   
   match 'n_pupils' => 'n_pupils#index'
+  
+  # fotos
+  
+  match 'n_foto' => 'n_foto#index'
+  
+  match 'n_foto/show/:id' => 'n_foto#show'
+  
+  match 'n_foto/show_big/:id' => 'n_foto#show_big'    
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
