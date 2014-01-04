@@ -1,0 +1,32 @@
+<h2>Napsali o nás</h2>
+<div style="text-align: left;">
+<p class="photo">
+	Čas od času se milečská škola objeví i v novinách. Máme pro vás několik sebraných článků, kde můžete najít vyprávění o naší škole.
+</p>
+</div>
+<img id="clanek1" src="/assets/articles/clanek1.png" style="display: none;" />
+<img id="clanek2" src="/assets/articles/clanek2.jpg" width="1024" height="768" style="display: none;" />
+<hr class="fancy-line" />
+<ul style="margin-left: 30px; margin-top: 10px;">
+  <li>
+  	<div>
+  	<%= link_to('V sedle krajem svatého Jana', 'n_newspapers/show/clanek1', :class => 'article', :title => 'Zobrazit článek', :remote => true) %>
+  	<p class="photo" style="font-style: italic;">
+  	  červenec 2012 / Plzeňský deník<br />
+  	  René Flašár, Radka Eliášová
+  	  <%= link_to(image_tag("/assets/articles/clanek1_thumb.jpg", :title => 'Zobrazit článek', :class => 'photo', :width => 109, :height => 150, :alt => 'V sedle krajem svatého Jana', :style => 'float: right;'), "/n_newspapers/show/clanek1", :remote => true, :class => 'photo') %>  	  	
+  	</p> 
+  	</div> 	
+  </li>	
+  <hr class="fancy-line" style="margin-bottom: 10px;" />
+  <li>
+  	<div>
+  	<%= link_to('Když nám něco nejde, tak si zazpíváme', 'n_newspapers/show/clanek2', :class => 'article', :title => 'Zobrazit článek', :remote => true) %>
+  	<p class="photo" style="font-style: italic;">
+  	  2011 / Plzeňský deník<br />
+  	  Michal Pipta  	  
+  	  <%= link_to(image_tag("/assets/articles/clanek2_thumb.jpg", :title => 'Zobrazit článek', :class => 'photo', :width => 150, :height => 109, :alt => 'Když nám něco nejde, tak si zazpíváme', :style => 'float: right;'), "/n_newspapers/show/clanek2", :remote => true, :class => 'photo') %>	
+  	</p>
+  	</div>  	
+  </li>
+</ul>

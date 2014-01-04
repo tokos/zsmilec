@@ -488,3 +488,25 @@ div.target
 {
   display: none;
 }
+
+a.article, a.article:link, a.article:visited
+{
+  text-decoration: none;
+  border: none;
+  background-color: #FFFFFF;
+  color: #000000;
+  font-family: Verdana;
+  font-size: medium;
+  font-weight: bold;  
+}
+
+a.article:hover
+{
+  text-decoration: none;
+  border: none;
+  background-color: #E8E8E8;
+  color: #000000;
+  font-family: Verdana;
+  font-size: medium;
+  font-weight: bold;  
+}

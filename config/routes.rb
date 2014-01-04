@@ -139,8 +139,14 @@ RailsinstallerDemo::Application.routes.draw do
   
   match 'n_foto/show/:id' => 'n_foto#show'
   
-  match 'n_foto/show_big/:id' => 'n_foto#show_big'    
-
+  match 'n_foto/show_big/:id' => 'n_foto#show_big'
+  
+  # newspapers
+  
+  match 'n_newspapers' => 'n_newspapers#index'
+       
+  match 'n_newspapers/show/:picture' => 'n_newspapers#show' 
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,10 @@
+var largeImage = document.getElementById('<%= @picture %>');
+largeImage.style.width=1024 +"px";
+largeImage.style.height=800 +"px"; 
+var url=largeImage.getAttribute('src');
+
+var newImg = window.open(url,"Image", "width=1024,height=768,resizable=1")
+newImg.document.write("<title><%= @picture %></title>")
+newImg.document.write("<img src='"+ url +"' height='"+ largeImage.style.height +"' width='"+ largeImage.stylewidth +"' onclick='window.close()' style='position:absolute;left:0;top:0'>")
+newImg.document.write("<script type='text/javascript'> document.oncontextmenu = new Function(\"return false\") </sc"+"ript>")
+newImg.document.close()
