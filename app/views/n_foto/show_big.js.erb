@@ -1,7 +1,7 @@
 var largeImage = document.getElementById('target_<%= @photo.ID.to_s %>');
 largeImage.style.width=800+"px";
 largeImage.style.height=600+"px"; 
-var url=largeImage.getAttribute('src');
+var url=largeImage.innerHTML;
 
 var newImg = window.open(url,"Image", "width=800,height=600,resizable=1")
 newImg.document.write("<title><%= @photo.DESCRIPTION %></title>")

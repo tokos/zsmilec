@@ -6,7 +6,7 @@
 <p class="photo"><%= @album.DESCRIPTION %></p>
 <% @photos.each do |photo| %>
   <div class="target">
-  	<%= image_tag photo.image_url().to_s, :id => 'target_'+photo.ID.to_s %>  	
+  	<p id="target_<%= photo.ID.to_s %>"><%= photo.image_url().to_s %>  	  	
   </div>	
 <% end %>
 <table>
