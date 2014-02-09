@@ -1,51 +1,36 @@
 <hr class="fancy-line" />
-<table class="admin" style="margin-top: 30px;">
-  <tr>
-  	<td>
-      <div style="margin-right: 50px;">
-        <table class="admin">
-          <tr>
-          	<th class="h2">Ředitelka</th>
-          </tr>	
-  	      <tr>
-  	        <td><%= @headmaster.DEGREE %> <%= @headmaster.FIRST_NAME %> <%= @headmaster.LAST_NAME %></td>	  	        
-  	      </tr>
-  	      <tr>
-  	      	<td><%= image_tag @headmaster.image_url(:thumb).to_s, :style => 'margin-top: 10px;' %></td>
-  	      </tr>
-        </table>
-      </div>	
-    </td>
-    <td>
-	 <div>
-       <table class="admin">
-         <tr>
-           <th colspan="2" class="h2">Adresa</th>	
-         </tr>	       	 
-  	     <tr>
-           <td style="vertical-align: bottom;"><span class="highlight"><%= @school.NAME %></span></td>
-           <td rowspan="2"><img src="/assets/envelope.png" width="173" height="101" title="" alt="" /></td>
-  	     </tr>	
-  	     <tr>
-  	       <td style="vertical-align: top;"><span class="highlight"><%= @school.ADDRESS %></span></td>
-  	     </tr>
-  	     <tr>
-  	       <th class="h2">Email:</th>	  	       
-  	       <td colspan="2"><span class="highlight"><%= @school.EMAIL %></span></td>
-  	     </tr>
-       </table>       
-     </div>
-     <div style="margin-top: 30px;">       
-       <table class="admin">
-       	 <tr>
-       	   <th colspan="2" class="h2">Telefon</th>
-       	 </tr>
-  	     <tr>
-  	       <td><%= @school.PHONE %></td>
-  	       <td><img src="/assets/phone.png" width="125" height="100" title="" alt="" /></td>	
-  	     </tr>
-       </table>
-     </div>    	
-    </td>
+<table class="admin" style="margin-top: 10px; margin-left: 80px;" cellspacing="20">
+  <tr>  	
+  	<td rowspan="2"><img src="/assets/icons/letter.png" width="40" height="40" title="" alt="" /></td>
+  	<th class="h2" style="padding-left: 50px;"><%= @school.NAME %></th>  	  	  
   </tr>	
-</table>
+  <tr>  	
+  	<td style="padding-left: 50px; padding-right: 50px; border-bottom: 1px solid #000000; font-size: 14px;"><%= @school.ADDRESS %></td>
+  </tr>  
+  <tr>
+  	<td></td>
+  	<td style="padding-left: 50px; border-bottom: 1px solid #000000; font-size: 14px;">IČO: <span style="font-weight: bold;">60611308</span></td>
+  </tr>
+  <tr>  	
+  	<td rowspan="2"><img src="/assets/icons/phone.png" width="40" height="40" title="" alt="" /></td>
+  	<td>Pevná linka</td>  	  	  
+  </tr>	
+  <tr>  	  	
+  	<td style="padding-left: 50px; border-bottom: 1px solid #000000; font-size: 14px;"><%= @school.PHONE %></td>  	  	  
+  </tr>
+  <tr>
+  	<td rowspan="2"></td>
+  	<td>Ředitelka</td>  	
+  </tr>
+  <tr>
+    <td style="padding-left: 50px; border-bottom: 1px solid #000000; font-size: 14px;"><%= @headmaster.DEGREE %> <%= @headmaster.FIRST_NAME %> <%= @headmaster.LAST_NAME %></td>	  	        
+  </tr>
+  <tr>
+  	<td rowspan="2"><img src="/assets/icons/at.png" width="40" height="40" title="" alt="" /></td>
+  	<td>Email</td>  	
+  </tr>
+  <tr>
+    <td style="padding-left: 50px; border-bottom: 1px solid #000000; font-size: 14px;"><%= @school.EMAIL %></td>	  	        
+  </tr>
+</table>	
+	
