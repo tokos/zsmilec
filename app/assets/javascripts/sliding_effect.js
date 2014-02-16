@@ -12,7 +12,8 @@ function slide(navigation_id, pad_out, pad_in, time, multiplier)
 	// initiates the timer used for the sliding animation
 	var timer = 0;
 	
-	// creates the slide animation for all list elements 
+	// creates the slide animation for all list elements
+	/*
 	$(list_elements).each(function(i)
 	{
 		// margin left = - ([width of element] + [total vertical padding of element])
@@ -23,6 +24,7 @@ function slide(navigation_id, pad_out, pad_in, time, multiplier)
 		$(this).animate({ marginLeft: "15px" }, timer);
 		$(this).animate({ marginLeft: "0" }, timer);
 	});
+	*/
 
 	// creates the hover-slide effect for all link elements 		
 	$(link_elements).each(function(i)
