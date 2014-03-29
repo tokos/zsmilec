@@ -1,0 +1,105 @@
+<h1 class="table">Zpracování logů</h1>
+<br />
+<a class="button" href="admin"><image src="/assets/go-back-icon.png" height="26" width="26" title="Zpět do hlavního menu" /></a>
+<%= link_to('Zpracovat logy', 'logs/parse') %>
+<div style="margin-top: 20px;">
+<% if @logs != nil && @logs.empty? %>
+ <p class="presscard">Logy zatím nebyly zpracované</p>
+<% else%>
+
+<h2>TOP IP adresy</h2>
+<% @logs_ip = Log.find_by_sql('select IP_ADDRESS, count(CONTROLLER) as "SUM" from LOGS group by IP_ADDRESS order by SUM desc') %>
+
+<div style="width: 280px;">
+<table>	
+  <tr>  	
+  	<th style="width: 120px;">IP adresa</th>
+  	<th style="width: 120px;">Počet požadavků</th>
+   </tr>
+</table>
+</div>
+<div style="height: 200px; width: 280px; overflow: auto; margin-bottom: 20px;">
+<table>	  	
+  <% @logs_ip.each do |log| %>
+  <tr>      
+    <td style="width: 120px;"><%= log.IP_ADDRESS %></td>
+    <td style="width: 120px;"><%= log.SUM %></td>
+  </tr>
+  <% end %>
+  
+</table>
+</div>	
+
+<h2>Controllery</h2>
+
+<% @logs_ctrl = Log.find_by_sql('select CONTROLLER, count(ID) as "SUM" from LOGS group by CONTROLLER order by SUM desc') %>
+
+<div style="width: 280px;">
+<table>	
+  <tr>  	
+  	<th style="width: 120px;">Controller</th>
+  	<th style="width: 120px;">Počet požadavků</th>
+   </tr>
+</table>
+</div>
+<div style="height: 200px; width: 280px; overflow: auto; margin-bottom: 20px;">
+<table>  	
+  <% @logs_ctrl.each do |log| %>
+    <tr>
+      <td style="width: 120px;"><%= log.CONTROLLER %></td>
+      <td style="width: 120px;"><%= log.SUM %></td>	
+    </tr>	
+  <%  end %>
+</table>
+</div>
+
+<h2>Poslední týden</h2>
+
+<% @logs_ip_lw = Log.find_by_sql('select IP_ADDRESS, count(CONTROLLER) as "SUM" from LOGS where LOG_TIME > DATE_SUB(now(), INTERVAL 7 DAY) group by IP_ADDRESS order by SUM desc') %>
+
+<div style="width: 280px;">
+<table>	
+  <tr>  	
+  	<th style="width: 120px;">IP adresa</th>
+  	<th style="width: 120px;">Počet požadavků</th>
+   </tr>
+</table>
+</div>
+<div style="height: 200px; width: 280px; overflow: auto; margin-bottom: 20px;">
+<table>	  	
+  <% @logs_ip_lw.each do |log| %>
+  <tr>      
+    <td style="width: 120px;"><%= log.IP_ADDRESS %></td>
+    <td style="width: 120px;"><%= log.SUM %></td>
+  </tr>
+  <% end %>
+  
+</table>
+</div>
+
+<h2>Dnes</h2>
+<% @logs_ip_day = Log.find_by_sql('select IP_ADDRESS, count(CONTROLLER) as "SUM" from LOGS where LOG_TIME > DATE_SUB(now(), INTERVAL 1 DAY) group by IP_ADDRESS order by SUM desc') %>
+
+<div style="width: 280px;">
+<table>	
+  <tr>  	
+  	<th style="width: 120px;">IP adresa</th>
+  	<th style="width: 120px;">Počet požadavků</th>
+   </tr>
+</table>
+</div>
+<div style="height: 200px; width: 280px; overflow: auto; margin-bottom: 20px;">
+<table>	  	
+  <% @logs_ip_day.each do |log| %>
+  <tr>      
+    <td style="width: 120px;"><%= log.IP_ADDRESS %></td>
+    <td style="width: 120px;"><%= log.SUM %></td>
+  </tr>
+  <% end %>
+  
+</table>
+</div>
+
+	
+</div>
+<% end %>

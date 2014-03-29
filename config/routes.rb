@@ -54,6 +54,12 @@ RailsinstallerDemo::Application.routes.draw do
   
   match 'photos/new/:id' => 'photos#new'
   
+  match 'logs' => 'logs#index'
+  
+  match 'logs/index' => 'logs#index'
+  
+  match 'logs/parse' => 'logs#parse'
+  
   # **************************************************************
   # NORMAL VIEWS
   # **************************************************************
@@ -109,7 +115,11 @@ RailsinstallerDemo::Application.routes.draw do
   
   match 'action' => 'n_actions#action'
   
-  match 'holiday' => 'n_actions#holiday'  
+  match 'holiday' => 'n_actions#holiday' 
+  
+  match 'timeline' => 'n_actions#timeline' 
+  
+  match 'n_actions/timeline' => 'n_actions#timeline'
   
   # documents
   
