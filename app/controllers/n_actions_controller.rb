@@ -9,7 +9,7 @@ class NActionsController < ApplicationController
     @object = Monthly.new
     @object.monthly = false
     
-    @events = Event.all
+    @events = Event.order(:EVENT_DATE, :EVENT_TIME)
     
     respond_to do |format|
       format.html # index.html.erb      
@@ -18,7 +18,7 @@ class NActionsController < ApplicationController
   
   def action
     
-    @events = Event.all
+    @events = Event.order(:EVENT_DATE, :EVENT_TIME)    
     
     @object = Monthly.new
     
@@ -34,6 +34,6 @@ class NActionsController < ApplicationController
     respond_to do | format |  
         format.js {render :layout => false}  
     end
-  end
+  end  
   
 end
