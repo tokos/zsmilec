@@ -32,7 +32,7 @@
 
 <h2>Controllery</h2>
 
-<% @logs_ctrl = Log.find_by_sql('select CONTROLLER, count(ID) as "SUM" from LOGS group by CONTROLLER order by SUM desc') %>
+<% @logs_ctrl = Log.find_by_sql('select CONTROLLER, count(ID) as "SUM" from logs group by CONTROLLER order by SUM desc') %>
 
 <div style="width: 280px;">
 <table>	
@@ -55,7 +55,7 @@
 
 <h2>Poslední týden</h2>
 
-<% @logs_ip_lw = Log.find_by_sql('select IP_ADDRESS, count(CONTROLLER) as "SUM" from LOGS where LOG_TIME > DATE_SUB(now(), INTERVAL 7 DAY) group by IP_ADDRESS order by SUM desc') %>
+<% @logs_ip_lw = Log.find_by_sql('select IP_ADDRESS, count(CONTROLLER) as "SUM" from logs where LOG_TIME > DATE_SUB(now(), INTERVAL 7 DAY) group by IP_ADDRESS order by SUM desc') %>
 
 <div style="width: 280px;">
 <table>	
@@ -78,7 +78,7 @@
 </div>
 
 <h2>Dnes</h2>
-<% @logs_ip_day = Log.find_by_sql('select IP_ADDRESS, count(CONTROLLER) as "SUM" from LOGS where LOG_TIME > DATE_SUB(now(), INTERVAL 1 DAY) group by IP_ADDRESS order by SUM desc') %>
+<% @logs_ip_day = Log.find_by_sql('select IP_ADDRESS, count(CONTROLLER) as "SUM" from logs where LOG_TIME > DATE_SUB(now(), INTERVAL 1 DAY) group by IP_ADDRESS order by SUM desc') %>
 
 <div style="width: 280px;">
 <table>	
