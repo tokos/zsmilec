@@ -91,11 +91,11 @@ RailsinstallerDemo::Application.routes.draw do
   
   # employees  
   
-  resources :n_employees
+  #resources :n_employees
   
-  match 'n_employees' => 'n_employees#index'
+  #match 'n_employees' => 'n_employees#index'
   
-  match 'show_employee' => 'n_employees#show_employee'
+  #match 'show_employee' => 'n_employees#show_employee'
   
   resources :n_timetable
   
