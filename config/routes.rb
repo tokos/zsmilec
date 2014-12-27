@@ -97,6 +97,8 @@ RailsinstallerDemo::Application.routes.draw do
   
   #match 'show_employee' => 'n_employees#show_employee'
   
+  match 'n_school_council' => 'n_school_council#index'    
+  
   resources :n_timetable
   
   match 'n_timetable' => 'n_timetable#index'
