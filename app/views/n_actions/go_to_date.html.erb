@@ -33,14 +33,14 @@
     }
   </script>
 <div style="margin-top: 30px; margin-left: 30px;">	
-<table>
-<tr>			
+<table>	
+<tr>		
 <td style="border: none;">	
   <form action="go_to_date" method="get">	
   <table class="admin">
   <tr>  	
   	  <td style="padding-bottom: 10px;"><%=link_to '<<', { :controller => 'n_actions', :action => 'week_back', :d => @week.date, :remote => true }, :title => 'Předchozí týden', :class => 'bookmark' %></td>  	    	    	 
-  	  <td style="padding-bottom: 10px;"><%= text_field_tag :godate, 'Jdi na datum', { :onchange => 'goToDate($(this).val());', :class => 'datepicker', :remote => true, :id => 'picker' } %></td>  	    	    	    	  
+  	  <td style="padding-bottom: 10px;"><%= text_field_tag :godate, @week.date.strftime("%d.%m.%Y"), { :onchange => 'goToDate($(this).val());', :class => 'datepicker', :remote => true, :id => 'picker' } %></td>  	    	    	    	  
   	  <td style="padding-bottom: 10px;"><%=link_to '>>', { :controller => 'n_actions', :action => 'week_forward', :d => @week.date, :remote => true }, :title => 'Následující týden', :class => 'bookmark' %></td>  	  	  	 
   	</tr>
   </table>
@@ -229,9 +229,9 @@
 <td style="background-image: url('assets/paper-back.jpg'); border: 1px solid #B8B8B8; border-bottom: 3px ridge #B8B8B8;"> 
   <img src="/assets/krouzkovka2.png" width="30" height="350" title="" alt="" />	 
 </td>
-<td id="target-desc" style="width: 230px; border-left: none; border-top: 1px solid #B8B8B8; border-bottom: 3px ridge #B8B8B8; border-right: 6px double #505050; background-image: url('assets/paper-back.jpg'); vertical-align: top; padding-top: 30px;">  	
+<td id="target-desc" style="width: 230px; border-left: none; border-top: 1px solid #B8B8B8; border-bottom: 3px ridge #B8B8B8; border-right: 6px double #505050; background-image: url('assets/paper-back.jpg'); vertical-align: top; padding-top: 30px;">  		
 </td>	
 </tr>
 </table>  	
 </div>
-</div>
+</div>	

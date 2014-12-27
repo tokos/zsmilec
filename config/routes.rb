@@ -117,9 +117,23 @@ RailsinstallerDemo::Application.routes.draw do
   
   match 'holiday' => 'n_actions#holiday' 
   
-  match 'timeline' => 'n_actions#timeline' 
+  match 'calendar' => 'n_actions#calendar' 
   
-  match 'n_actions/timeline' => 'n_actions#timeline'
+  match 'n_actions/calendar' => 'n_actions#calendar'    
+  
+  match 'week_back' => 'n_actions#week_back' 
+  
+  match 'n_actions/week_back' => 'n_actions#week_back'
+  
+  match 'week_forward' => 'n_actions#week_forward' 
+  
+  match 'n_actions/week_forward' => 'n_actions#week_forward'
+  
+  match 'go_to_date' => 'n_actions#go_to_date' 
+  
+  match 'n_actions/go_to_date' => 'n_actions#go_to_date'
+  
+  match 'n_actions/event_info' => 'n_actions#event_info'   
   
   # documents
   

@@ -1,8 +1,4 @@
-<%= link_to 'Akce', '/n_actions/action', :action => 'action', :title => '', :id => 'action', :remote => true, :class => 'bookmark' %>
-<%= link_to 'Kalendář', '/n_actions/calendar', :action => 'calendar', :title => '', :id => 'calendar', :remote => true, :class => 'bookmark-marked' %>
-<%= link_to 'Prázdniny', '/n_actions/holiday', :action => 'holiday', :title => '', :remote => true, :class => 'bookmark', :id => 'holiday' %>
-<hr class="fancy-line" />
-<div id="target">
+<!--<hr class="fancy-line" />-->
 <script>              
     $(function() {    	      	
     	      
@@ -63,10 +59,10 @@
 	    <th style="background-color: green;"><%=@week.monday.date.mday %></th>
 	  <% else %>
 	    <th><%=@week.monday.date.mday %></th>  
-	  <% end %>		  	 	  		
+	  <% end %>	  		  	 	  	
 	  <td style="width: 200px; font-family: 'Comic Sans MS', cursive, sans-serif;">
 	  	<hr class="fancy-line" />
-	  	<% @week.monday.events.each do |event| %>
+	  	<% @week.monday.events.each do |event| %>	  	  
 	  	  <%=link_to event.TEXT, { :controller => 'n_actions', :action => 'event_info', :event_id => event.id, :day => @week.monday.date.mday.to_s+"."+@week.monday.date.mon.to_s+".", :remote => true }, :title => '', :class => 'bookmark' %><% if @week.monday.events.last != event %>,<% end %>	  	  
 	  	<% end %>	  		
 	  	<% if @week.monday.events.empty? %>
@@ -229,9 +225,8 @@
 <td style="background-image: url('assets/paper-back.jpg'); border: 1px solid #B8B8B8; border-bottom: 3px ridge #B8B8B8;"> 
   <img src="/assets/krouzkovka2.png" width="30" height="350" title="" alt="" />	 
 </td>
-<td id="target-desc" style="width: 230px; border-left: none; border-top: 1px solid #B8B8B8; border-bottom: 3px ridge #B8B8B8; border-right: 6px double #505050; background-image: url('assets/paper-back.jpg'); vertical-align: top; padding-top: 30px;">  	
+<td id="target-desc" style="width: 230px; border-left: none; border-top: 1px solid #B8B8B8; border-bottom: 3px ridge #B8B8B8; border-right: 6px double #505050; background-image: url('assets/paper-back.jpg'); vertical-align: top; padding-top: 30px;">  		
 </td>	
 </tr>
 </table>  	
-</div>
-</div>
+</div>	
