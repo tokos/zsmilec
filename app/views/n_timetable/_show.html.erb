@@ -12,9 +12,11 @@
   	# Optimalization: HASHMAP for subject->teacher
   	teachers = Hash.new 
   	Subject.all().each do |subject|
-  	  t = Employee.find(subject.EMPLOYEE_ID)
-  	  name = t.DEGREE+' '+t.FIRST_NAME+' '+t.LAST_NAME
-  	  teachers[subject.ID] = name	
+  	  if(subject.EMPLOYEE_ID != nil)	
+  	    t = Employee.find(subject.EMPLOYEE_ID)
+  	    name = t.DEGREE+' '+t.FIRST_NAME+' '+t.LAST_NAME
+  	    teachers[subject.ID] = name
+  	  end	
   	end 
   %>  
   <% Day.where(:TIMETABLE_ID => @timetable.ID).order(:POSITION).each do |day| %>
@@ -32,9 +34,11 @@
 			  <div class="subject" style="background-color: #CCFF33;">
 			    Předmět: <%= subject.NAME %>			  		  
 			    <br />
-			    (<%= hour.NOTE %>)			  
-			    <br />
-			    Vyučuje: <%= teachers[subject.ID] %>
+			    (<%= hour.NOTE %>)			  			    
+			    <% if(subject.EMPLOYEE_ID != nil) %>
+			      <br />
+			      Vyučuje: <%= teachers[subject.ID] %>
+			    <% end %>
   	      	  </div>
   	      	</td>  			
 			<%
@@ -43,9 +47,11 @@
 			<td onmouseover="$(this).find('div').show()" onmouseout="$(this).find('div').hide()" style="cursor: pointer;">
   	      	<%= subject.SHORT_NAME %>	
 			  <div class="subject">
-			    Předmět: <%= subject.NAME %>			  		  			  			  
-			    <br />
-			    Vyučuje: <%= teachers[subject.ID] %>
+			    Předmět: <%= subject.NAME %>			  		  			  			  			    
+			    <% if(subject.EMPLOYEE_ID != nil) %>
+			      <br />
+			      Vyučuje: <%= teachers[subject.ID] %>
+			    <% end %>  
   	      	  </div>
   	      	</td>  
   	      	<%  	
