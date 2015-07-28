@@ -81,6 +81,8 @@ RailsinstallerDemo::Application.routes.draw do
   
   match 'n_school/teaching' => 'n_school#teaching'
   
+  match 'n_school/introduction' => 'n_school#introduction'
+  
   match 'map' => 'n_school#map'
   
   match 'history' => 'n_school#history'
@@ -88,6 +90,8 @@ RailsinstallerDemo::Application.routes.draw do
   match 'contact' => 'n_school#contact'
   
   match 'teaching' => 'n_school#teaching'
+  
+  match 'intoduction' => 'n_school#introduction'
   
   # employees  
   
