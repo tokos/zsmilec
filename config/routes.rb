@@ -91,7 +91,7 @@ RailsinstallerDemo::Application.routes.draw do
   
   match 'teaching' => 'n_school#teaching'
   
-  match 'intoduction' => 'n_school#introduction'
+  match 'introduction' => 'n_school#introduction'
   
   # employees  
   
@@ -158,6 +158,14 @@ RailsinstallerDemo::Application.routes.draw do
   # parents
   
   match 'n_parents' => 'n_parents#index'
+  
+  match 'n_parents/training' => 'n_parents#training'
+  
+  match 'training' => 'n_parents#training'
+  
+  match 'n_parents/pupilsbook' => 'n_parents#pupilsbook'
+  
+  match 'pupilsbook' => 'n_parents#pupilsbook'
   
   # pupils
   
