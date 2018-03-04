@@ -12,6 +12,12 @@ class NSchoolController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb      
     end
+  end
+  
+  def registration
+    respond_to do | format |  
+        format.js {render :layout => false}  
+    end  
   end    
   
   def contact

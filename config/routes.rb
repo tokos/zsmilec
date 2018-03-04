@@ -67,9 +67,11 @@ RailsinstallerDemo::Application.routes.draw do
   
   match 'normal' => 'n_school#index'
   
-  # school
+  # school  
   
-  match 'n_school' => 'n_school#index'
+  match 'n_school' => 'n_school#index'  
+  
+  match 'n_school/registration' => 'n_school#registration'
   
   match 'normal/school' => 'n_school#index'
   
@@ -86,6 +88,8 @@ RailsinstallerDemo::Application.routes.draw do
   match 'map' => 'n_school#map'
   
   match 'history' => 'n_school#history'
+  
+  match 'registration' => 'n_school#registration'
   
   match 'contact' => 'n_school#contact'
   
